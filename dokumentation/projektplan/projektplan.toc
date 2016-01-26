@@ -13,25 +13,23 @@
 \contentsline {section}{\numberline {4}Organisationsplan f\IeC {\"o}r hela projektet}{2}
 \contentsline {subsection}{\numberline {4.1}Villkor f\IeC {\"o}r samarbete inom projektgruppen}{3}
 \contentsline {section}{\numberline {5}Dokumentplan}{4}
-\contentsline {section}{\numberline {6}Rapporteringsplan}{5}
-\contentsline {subsection}{\numberline {6.1}Statusrapport}{5}
-\contentsline {subsection}{\numberline {6.2}Tidsrapport}{5}
-\contentsline {section}{\numberline {7}M\IeC {\"o}tesplan}{5}
-\contentsline {section}{\numberline {8}Resursplan}{5}
-\contentsline {subsection}{\numberline {8.1}Personer}{5}
-\contentsline {subsection}{\numberline {8.2}Material}{5}
-\contentsline {subsection}{\numberline {8.3}Lokaler}{6}
-\contentsline {subsection}{\numberline {8.4}Ekonomi}{6}
-\contentsline {section}{\numberline {9}Milstolpar och beslutspunkter}{6}
-\contentsline {subsection}{\numberline {9.1}Milstolpar}{6}
-\contentsline {section}{\numberline {10}Aktiviteter}{7}
-\contentsline {subsection}{\numberline {10.1}Utbildning}{7}
-\contentsline {subsection}{\numberline {10.2}Filsystem}{7}
-\contentsline {subsection}{\numberline {10.3}Huvudalgoritm}{7}
-\contentsline {subsection}{\numberline {10.4}Planering}{7}
-\contentsline {subsection}{\numberline {10.5}Gr\IeC {\"a}nssnitt}{8}
-\contentsline {subsection}{\numberline {10.6}Byggsystem}{8}
-\contentsline {subsection}{\numberline {10.7}Gurobi}{8}
-\contentsline {subsection}{\numberline {10.8}Dokumentation}{8}
-\contentsline {section}{\numberline {11}Projektavslut}{8}
-\contentsline {section}{Bilaga \numberline {A}M\IeC {\"o}tesmall}{9}
+\contentsline {section}{\numberline {6}Rapporteringsplan}{4}
+\contentsline {subsection}{\numberline {6.1}Statusrapport}{4}
+\contentsline {section}{\numberline {7}Resursplan}{4}
+\contentsline {subsection}{\numberline {7.1}Personer}{4}
+\contentsline {subsection}{\numberline {7.2}Material}{4}
+\contentsline {subsection}{\numberline {7.3}Lokaler}{5}
+\contentsline {subsection}{\numberline {7.4}Ekonomi}{5}
+\contentsline {section}{\numberline {8}Milstolpar och beslutspunkter}{5}
+\contentsline {subsection}{\numberline {8.1}Milstolpar}{5}
+\contentsline {section}{\numberline {9}Aktiviteter}{6}
+\contentsline {subsection}{\numberline {9.1}Utbildning}{6}
+\contentsline {subsection}{\numberline {9.2}Filsystem}{6}
+\contentsline {subsection}{\numberline {9.3}Huvudalgoritm}{6}
+\contentsline {subsection}{\numberline {9.4}Planering}{6}
+\contentsline {subsection}{\numberline {9.5}Gr\IeC {\"a}nssnitt}{7}
+\contentsline {subsection}{\numberline {9.6}Byggsystem}{7}
+\contentsline {subsection}{\numberline {9.7}Gurobi}{7}
+\contentsline {subsection}{\numberline {9.8}Dokumentation}{7}
+\contentsline {section}{\numberline {10}Projektavslut}{7}
+\contentsline {section}{Bilaga \numberline {A}M\IeC {\"o}tesmall}{8}
