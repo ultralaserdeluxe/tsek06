@@ -1,20 +1,27 @@
 \section{Fasplan}
-Projektet består av fem faser och Alfa-tillstånden finns med i bilaga B:
+Projektet består av följande fem faser:
 \begin{enumerate}
 \item Förstudie
-\item Iteration 1
-\item Iteration 2
-\item Iteration 3
-\item Redovisning och reservtid
+\item Högnivådesign
+\item Transistornivådesign
+\item Layout
+\item Redovisning
 \end{enumerate}
 
-\subsection{Förstudie}
-Innan iteration 1 genomförs en förstudie där en  kravspecifikation, en projektplan och en kvalitetsplan ska skrivas och lämnas in till handledaren samt kund. 
+\subsection{Fas 1: Förstudie}
+Under förstudien sker litteratursökning och fördjupning inom själv projektuppgiften, och en projektplan med tidplan skall levereras till handledare. 
 
-\subsection{Under iterationerna}
+\subsection{Fas 2: Högnivådesign}
 
-Under projektets gång skall handledaren kontinuerligt uppdateras hur projektet fortskrider genom tidsrapporter varje vecka. I slutet av varje iteration ska diverse dokument lämnas in för att ge intressenter en insikt i hur arbetet fortskrider. Även en statusrapport ska kunna skickas iväg till handledaren varje vecka eller kund om det begärs. 
+Det första som skall göras under projektet är att utveckla en högnivådesign som matchar det beteende som kunden söker. Denna design kommer skrivas i ett HDL-språk, som i detta fallet troligtvis kommer vara Verilog, och designen ska simuleras för att sökerställa att den uppför sig enligt specifikation.
 
+\subsection{Fas 3: Transistornivådesign}
 
-\subsection{Efter projektet}
-Efter iteration 3 ska resultatet granskas vid en opponering där projektet både blir granskat och där gruppen opponerar mot ett annat projekt. Sedan följer en inlämning av en slutrapport, en demonstration av resultatet och överlämning till beställaren. 
+Högnivådesignen från fas två är klar och börjar förfinas och mer detaljer läggs till. Allt eftersom mer detaljer läggs till så måste designen simuleras och verifieras igen. Detta är en iterativ process som går från blocknivå beskrivning genom en macromodelldesign ända ner till transistorimplementering av kretsen. Det huvudsakliga arbetet här kommer vara simuleringar. Om fel påträffas måste vi gå tillbaka till en högre nivå och ändra designen så att felen åtgärdas.
+
+\subsection{Fas 4: Layout}
+
+Här byggs allting från grunden. Små celler byggs med transistorer som sedan används i större block, och hela systemet byggs nedifrån upp. Efter varje steg på vägen upp så simuleras cellen för att säkerställa att den fungerar korrekt.
+
+\subsection{Fas5: Redovisning}
+Efter projektets slut skall en slutgiltlig rapport lämnas in, samt en presentation av projektet skall ske. 

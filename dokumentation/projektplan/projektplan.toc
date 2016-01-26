@@ -5,12 +5,13 @@
 \contentsline {subsection}{\numberline {2.2}Leveranser}{1}
 \contentsline {subsection}{\numberline {2.3}Begr\IeC {\"a}nsningar}{1}
 \contentsline {section}{\numberline {3}Fasplan}{1}
-\contentsline {subsection}{\numberline {3.1}F\IeC {\"o}rstudie}{1}
-\contentsline {subsection}{\numberline {3.2}Under iterationerna}{2}
-\contentsline {subsection}{\numberline {3.3}Efter projektet}{2}
+\contentsline {subsection}{\numberline {3.1}Fas 1: F\IeC {\"o}rstudie}{1}
+\contentsline {subsection}{\numberline {3.2}Fas 2: H\IeC {\"o}gniv\IeC {\r a}design}{2}
+\contentsline {subsection}{\numberline {3.3}Fas 3: Transistorniv\IeC {\r a}design}{2}
+\contentsline {subsection}{\numberline {3.4}Fas 4: Layout}{2}
+\contentsline {subsection}{\numberline {3.5}Fas5: Redovisning}{2}
 \contentsline {section}{\numberline {4}Organisationsplan f\IeC {\"o}r hela projektet}{2}
-\contentsline {subsection}{\numberline {4.1}Villkor f\IeC {\"o}r samarbete inom projektgruppen}{2}
-\contentsline {subsection}{\numberline {4.2}Ansvarsomr\IeC {\r a}den}{3}
+\contentsline {subsection}{\numberline {4.1}Villkor f\IeC {\"o}r samarbete inom projektgruppen}{3}
 \contentsline {section}{\numberline {5}Dokumentplan}{4}
 \contentsline {section}{\numberline {6}Rapporteringsplan}{5}
 \contentsline {subsection}{\numberline {6.1}Statusrapport}{5}
