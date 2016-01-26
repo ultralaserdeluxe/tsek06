@@ -1,0 +1,36 @@
+\select@language {swedish}
+\contentsline {section}{\numberline {1}Best\IeC {\"a}llare}{1}
+\contentsline {section}{\numberline {2}\IeC {\"O}versiktlig beskrivning av projektet}{1}
+\contentsline {subsection}{\numberline {2.1}Syfte och m\IeC {\r a}l}{1}
+\contentsline {subsection}{\numberline {2.2}Leveranser}{2}
+\contentsline {subsection}{\numberline {2.3}Begr\IeC {\"a}nsningar}{3}
+\contentsline {section}{\numberline {3}Fasplan}{3}
+\contentsline {subsection}{\numberline {3.1}F\IeC {\"o}rstudie}{3}
+\contentsline {subsection}{\numberline {3.2}Under iterationerna}{3}
+\contentsline {subsection}{\numberline {3.3}Efter projektet}{3}
+\contentsline {section}{\numberline {4}Organisationsplan f\IeC {\"o}r hela projektet}{3}
+\contentsline {subsection}{\numberline {4.1}Villkor f\IeC {\"o}r samarbete inom projektgruppen}{4}
+\contentsline {subsection}{\numberline {4.2}Ansvarsomr\IeC {\r a}den}{5}
+\contentsline {section}{\numberline {5}Dokumentplan}{6}
+\contentsline {section}{\numberline {6}Rapporteringsplan}{7}
+\contentsline {subsection}{\numberline {6.1}Statusrapport}{7}
+\contentsline {subsection}{\numberline {6.2}Tidsrapport}{7}
+\contentsline {section}{\numberline {7}M\IeC {\"o}tesplan}{7}
+\contentsline {section}{\numberline {8}Resursplan}{7}
+\contentsline {subsection}{\numberline {8.1}Personer}{7}
+\contentsline {subsection}{\numberline {8.2}Material}{7}
+\contentsline {subsection}{\numberline {8.3}Lokaler}{8}
+\contentsline {subsection}{\numberline {8.4}Ekonomi}{8}
+\contentsline {section}{\numberline {9}Milstolpar och beslutspunkter}{8}
+\contentsline {subsection}{\numberline {9.1}Milstolpar}{8}
+\contentsline {section}{\numberline {10}Aktiviteter}{9}
+\contentsline {subsection}{\numberline {10.1}Utbildning}{9}
+\contentsline {subsection}{\numberline {10.2}Filsystem}{9}
+\contentsline {subsection}{\numberline {10.3}Huvudalgoritm}{9}
+\contentsline {subsection}{\numberline {10.4}Planering}{9}
+\contentsline {subsection}{\numberline {10.5}Gr\IeC {\"a}nssnitt}{10}
+\contentsline {subsection}{\numberline {10.6}Byggsystem}{10}
+\contentsline {subsection}{\numberline {10.7}Gurobi}{10}
+\contentsline {subsection}{\numberline {10.8}Dokumentation}{10}
+\contentsline {section}{\numberline {11}Projektavslut}{10}
+\contentsline {section}{Bilaga \numberline {A}M\IeC {\"o}tesmall}{11}
