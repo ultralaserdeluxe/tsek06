@@ -1,6 +1,0 @@
-\select@language {swedish}
-\contentsline {section}{\numberline {1}Inledning}{1}
-\contentsline {subsection}{\numberline {1.1}Parter}{1}
-\contentsline {section}{\numberline {2}Bakgrund}{1}
-\contentsline {section}{\numberline {3}System\IeC {\"o}versikt}{2}
-\contentsline {section}{\numberline {4}Systemets moduler}{2}

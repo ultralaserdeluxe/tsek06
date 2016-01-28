@@ -36,7 +36,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 %\lhead{\includegraphics[scale=0.4]{\LIPSlogga}}
-\rhead{\ifdef{\LIPSutfardare}{Utfärdat av \LIPSutfardare \\\LIPSdatum}\LIPSdatum}
+\rhead{\ifdef{\LIPSutfardare}{Issued by \LIPSutfardare \\\LIPSdatum}\LIPSdatum}
 \lfoot{\LIPSkursnamn \\ \LIPSdokumenttyp}
 \cfoot{\thepage}
 \rfoot{\LIPSprojektgrupp \\ \LIPSprojektnamn}
@@ -48,7 +48,7 @@
   \textbf{\Huge \LIPSdokument}
 \end{center}
 \begin{center}
-  {\Large Redaktör: \LIPSredaktor}
+  {\Large Editor: \LIPSredaktor}
 \end{center}
 \begin{center}
   {\Large \textbf{Version \LIPSversion}}
@@ -58,9 +58,9 @@
   {\large Status}\\[1.5ex]
   \begin{tabular}{|*{3}{p{40mm}|}}
     \hline
-    Granskad & \LIPSgranskare & \LIPSgranskatdatum \\
+    Reviewed & \LIPSgranskare & \LIPSgranskatdatum \\
     \hline
-    Godkänd & \LIPSgodkannare & \LIPSgodkantdatum \\
+    Approved & \LIPSgodkannare & \LIPSgodkantdatum \\
     \hline
   \end{tabular}
 \end{center}
@@ -71,17 +71,17 @@
 \newenvironment{LIPSprojektidentitet}{%
 {\ }\vspace{45mm}
 \begin{center}
-  {\Large PROJEKTIDENTITET}\\[0.5ex]
+  {\Large PROJECT IDENTITY}\\[0.5ex]
   {\small
   \LIPSartaltermin, \LIPSprojektgrupp\\
-  Linköpings Tekniska Högskola, IDA
+  Linköpings Tekniska Högskola, ISY
   }
 \end{center}
 \begin{center}
-  {\normalsize Gruppdeltagare}\\
+  {\normalsize Group members}\\
   \begin{tabular}{|l|l|p{25mm}|l|}
     \hline
-    \textbf{Namn} & \textbf{Ansvar} & \textbf{Telefon} & \textbf{E-post} \\
+    \textbf{Name} & \textbf{Responsibility} & \textbf{Phone} & \textbf{E-mail} \\
     \hline
 }%
 {%
@@ -92,10 +92,10 @@
   {\small
     \ifdef{\LIPSgruppadress}{\textbf{E-postlista för hela gruppen}: \LIPSgruppadress\\}{}
     \ifdef{\LIPSgrupphemsida}{\textbf{Hemsida}: \LIPSgrupphemsida\\[1ex]}{}
-    \ifdef{\LIPSkund}{\textbf{Kund}: \LIPSkund\\}{}
-    \ifdef{\LIPSkundkontakt}{\textbf{Kontaktperson hos kund}: \LIPSkundkontakt\\}{}
-    \ifdef{\LIPSkursansvarig}{\textbf{Kursansvarig}: \LIPSkursansvarig\\}{}
-    \ifdef{\LIPShandledare}{\textbf{Handledare}: \LIPShandledare\\}{}
+    \ifdef{\LIPSkund}{\textbf{Customer}: \LIPSkund\\}{}
+    \ifdef{\LIPSkundkontakt}{\textbf{Contact at customer}: \LIPSkundkontakt\\}{}
+    \ifdef{\LIPSkursansvarig}{\textbf{Course resposible}: \LIPSkursansvarig\\}{}
+    \ifdef{\LIPShandledare}{\textbf{Consultant}: \LIPShandledare\\}{}
   }
 \end{center}
 \newpage
@@ -105,11 +105,11 @@
 %% Dokumenthistorik
 \newenvironment{LIPSdokumenthistorik}{%
 \begin{center}
-  Dokumenthistorik\\[1ex]
+  Document history\\[1ex]
   %\begin{small}
     \begin{tabular}{|l|l|p{60mm}|l|l|}
       \hline
-      \textbf{Version} & \textbf{Datum} & \textbf{Utförda förändringar} & \textbf{Utförda av} & \textbf{Granskad} \\
+      \textbf{Version} & \textbf{Date} & \textbf{Changes} & \textbf{Performed by} & \textbf{Review by} \\
       }%
     {%
 			\hline
