@@ -13,5 +13,5 @@ $(TEXDIR)/$(OUTDIR)/$(PDFFILE): $(TEXFILE) $(wildcard $(TEXDIR)/*.tex)
 
 .PHONY: clean
 clean:
-	rm -rf $(TEXDIR)/$(BUILDDIR)
-	rm -rf $(TEXDIR)/$(OUTDIR)
+	rm -rf $(BUILDDIR)
+	rm -rf $(OUTDIR)
