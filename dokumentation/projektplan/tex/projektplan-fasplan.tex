@@ -1,27 +1,24 @@
-\section{Fasplan}
-Projektet består av följande fem faser:
+\section{Project phases}
+The project consist of the following five phases:
 \begin{enumerate}
-\item Förstudie
-\item Högnivådesign
-\item Transistornivådesign
+\item Prestudy
+\item High-level system description
+\item Top-Down system description
 \item Layout
-\item Redovisning
+\item Chip assembly
 \end{enumerate}
 
-\subsection{Fas 1: Förstudie}
-Under förstudien sker litteratursökning och fördjupning inom själv projektuppgiften, och en projektplan med tidplan skall levereras till handledare. 
+\subsection{Phase 1: Prestudy}
+During the prestudy phase there will be a lot of literature reading and getting a deeper understanding of the project task itself. We will also write the project plan including a time plan. 
 
-\subsection{Fas 2: Högnivådesign}
+\subsection{Phase 2: High-level system description}
+The first step in the construction of the chip is to develop the high-level system description, which matches the behavior that the sponsor asked for. This will be done in a hardware descriptive language, which in this case will be Verilog-A, and the design will be simulated to verify that it behaves as intended. 
 
-Det första som skall göras under projektet är att utveckla en högnivådesign som matchar det beteende som kunden söker. Denna design kommer skrivas i ett HDL-språk, som i detta fallet troligtvis kommer vara Verilog, och designen ska simuleras för att sökerställa att den uppför sig enligt specifikation.
+\subsection{Phase 3: Top-Down system description}
+The high-level system description from phase 2 will now be refined to include further details. We will use a top-down methodology as we go from block-level description via gate-level down to a transistor-level implementation. This will be a iterative process as after each new detail we add, we need to simulate and verify the design again. This means that much of the work here will be simulations.
 
-\subsection{Fas 3: Transistornivådesign}
+\subsection{Phase 4: Layout}
+Now we will start to build the design from the bottom. Transistors will be used to build small cells, and these cells will then be used in bigger blocks, and so on. This means that the design will be built in a bottom-up fashion. After each step along the way, the design needs to be simulated to verify that each step work correctly.
 
-Högnivådesignen från fas två är klar och börjar förfinas och mer detaljer läggs till. Allt eftersom mer detaljer läggs till så måste designen simuleras och verifieras igen. Detta är en iterativ process som går från blocknivå beskrivning genom en macromodelldesign ända ner till transistorimplementering av kretsen. Det huvudsakliga arbetet här kommer vara simuleringar. Om fel påträffas måste vi gå tillbaka till en högre nivå och ändra designen så att felen åtgärdas.
-
-\subsection{Fas 4: Layout}
-
-Här byggs allting från grunden. Små celler byggs med transistorer som sedan används i större block, och hela systemet byggs nedifrån upp. Efter varje steg på vägen upp så simuleras cellen för att säkerställa att den fungerar korrekt.
-
-\subsection{Fas5: Redovisning}
-Efter projektets slut skall en slutgiltlig rapport lämnas in, samt en presentation av projektet skall ske. 
+\subsection{Phase 5: Chip assembly}
+After the layout of the top cell is done, there is still some work to do. We need to add some circuits so that the block can communicate with the off-chip hardware, and after this, the final simulations need to be done.
