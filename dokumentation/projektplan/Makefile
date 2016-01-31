@@ -4,7 +4,7 @@ TEXDIR = tex
 TEXFILE = projektplan.tex
 PDFFILE = $(addsuffix .pdf,$(basename $(TEXFILE)))
 
-$(TEXDIR)/$(OUTDIR)/$(PDFFILE): $(TEXDIR)/$(TEXFILE)
+$(TEXDIR)/$(OUTDIR)/$(PDFFILE): $(TEXFILE) $(wildcard $(TEXDIR)/*.tex)
 	cd $(dir $<) ; mkdir -p $(BUILDDIR)
 	cd $(dir $<) ; pdflatex -halt-on-error -output-directory=$(BUILDDIR) $(notdir $<)
 	cd $(dir $<) ; pdflatex -halt-on-error -output-directory=$(BUILDDIR) $(notdir $<)
@@ -13,5 +13,5 @@ $(TEXDIR)/$(OUTDIR)/$(PDFFILE): $(TEXDIR)/$(TEXFILE)
 
 .PHONY: clean
 clean:
-	rm -rf $(TEXDIR)/$(BUILDDIR)
-	rm -rf $(TEXDIR)/$(OUTDIR)
+	rm -rf $(BUILDDIR)
+	rm -rf $(OUTDIR)
