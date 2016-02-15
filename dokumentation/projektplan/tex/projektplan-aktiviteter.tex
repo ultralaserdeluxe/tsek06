@@ -9,10 +9,11 @@ The following activities should be carried out to implement the Serial Periphera
 	\LIPSaktivitet{3}{Implement control logic in Verilog-A}{1}{10}{phase 2}
 	\LIPSaktivitet{4}{Implement 1:4 decoder in Verilog-A}{1}{10}{phase 2}
 	\LIPSaktivitet{5}{Integrate to high level design of SPI}{2,3,4}{10}{phase 2}
-	\LIPSaktivitet{6}{Simulation and test of high level design}{5}{10}{phase 2}
-	\LIPSaktivitet{7}{Implement transistor level design of the SPI unit in Cadence}{5}{30}{phase 3}
+	\LIPSaktivitet{44}{Implementation of test bench for SPI}{5}{5}{phase 2}
+	\LIPSaktivitet{6}{Simulation and test of high level design}{5}{5}{phase 2}
+	\LIPSaktivitet{7}{Implement transistor level design of the SPI unit}{5}{30}{phase 3}
 	\LIPSaktivitet{8}{Simulation and test of transistor design}{7}{20}{phase 3}
-	\LIPSaktivitet{9}{Implement layout level design of SPI unit in Cadence}{8}{30}{phase 4}
+	\LIPSaktivitet{9}{Implement layout level design of SPI unit}{8}{30}{phase 4}
 	\LIPSaktivitet{10}{Simulation and test of layout}{9}{20}{phase 4}
 \end{LIPSaktivitetslista}
 
@@ -22,10 +23,11 @@ The following activities should be carried out to implement a number generator u
 	\LIPSaktivitet{11}{Define structure the generator}{}{10}{phase 2}
 	\LIPSaktivitet{12}{Implement linear feedback shift registers in Verilog-A}{11}{10}{phase 2}
 	\LIPSaktivitet{13}{Integrate to high level design of the generator}{12}{10}{phase 2}
-	\LIPSaktivitet{14}{Simulation and test of the high level design}{13}{10}{phase 2}
-	\LIPSaktivitet{15}{Implement transistor level design of the generator in Cadence}{14}{20}{phase 3}
+	\LIPSaktivitet{45}{Implementation of test bench for generator}{13}{5}{phase 2}
+	\LIPSaktivitet{14}{Simulation and test of the high level design}{13}{5}{phase 2}
+	\LIPSaktivitet{15}{Implement transistor level design of the generator}{14}{15}{phase 3}
 	\LIPSaktivitet{16}{Simulation and test of the transistor}{15}{10}{phase 3}
-	\LIPSaktivitet{17}{Implement layout level design of generator unit in Cadence}{16}{20}{phase 4}
+	\LIPSaktivitet{17}{Implement layout level design of generator unit}{16}{15}{phase 4}
 	\LIPSaktivitet{18}{Simulation and test of layout}{17}{10}{phase 4}
 \end{LIPSaktivitetslista}
 
@@ -38,10 +40,11 @@ The following activities should be carried out to implement the adder.
 	\LIPSaktivitet{21}{Implement Propagate calculation logic in Verilog-A}{19}{10}{phase 2}
 	\LIPSaktivitet{22}{Implement Sum calculation logic in Verilog-A}{19}{10}{phase 2}		
 	\LIPSaktivitet{23}{Integrate to high level design of the adder}{20,21,22}{20}{phase 2}
-	\LIPSaktivitet{24}{Simulation and test of the high level design}{23}{20}{phase 2}
-	\LIPSaktivitet{25}{Implement transistor level design of the adder in Cadence}{24}{50}{phase 3}
+	\LIPSaktivitet{46}{Implementation of test bench for the adder}{23}{10}{phase 2}
+	\LIPSaktivitet{24}{Simulation and test of the high level design}{23}{10}{phase 2}
+	\LIPSaktivitet{25}{Implement transistor level design of the adder}{24}{40}{phase 3}
 	\LIPSaktivitet{26}{Simulation and test of the transistor design}{25}{20}{phase 3}
-	\LIPSaktivitet{27}{Implement layout level design of adder unit in Cadence}{26}{50}{phase 4}
+	\LIPSaktivitet{27}{Implement layout level design of adder unit}{26}{40}{phase 4}
 	\LIPSaktivitet{28}{Simulation and test of layout}{27}{20}{phase 4}
 \end{LIPSaktivitetslista}
 
@@ -51,17 +54,27 @@ The following activities should be carried out to implement the the output compa
 	\LIPSaktivitet{29}{Define the structure of the comparator}{}{5}{phase 2}
 	\LIPSaktivitet{30}{Implement bit comparator in Verilog-A}{29}{5}{phase 2}
 	\LIPSaktivitet{31}{Integrate to high level design of the comparator}{30}{10}{phase 2}
-	\LIPSaktivitet{32}{Simulation and test of the high level design}{31}{10}{phase 2}
-	\LIPSaktivitet{33}{Implement transistor level design of the comparator in Cadence}{32}{10}{phase 3}
+	\LIPSaktivitet{47}{Implementation of test bench for the comparator}{30}{5}{phase 2}
+	\LIPSaktivitet{32}{Simulation and test of the high level design}{31}{5}{phase 2}
+	\LIPSaktivitet{33}{Implement transistor level design of the comparator}{32}{10}{phase 3}
 	\LIPSaktivitet{34}{Simulation and test of the transistor design}{33}{20}{phase 3}
-	\LIPSaktivitet{35}{Implement layout level design of adder unit in Cadence}{34}{20}{phase 4}
+	\LIPSaktivitet{35}{Implement layout level design of adder unit}{34}{10}{phase 4}
 	\LIPSaktivitet{36}{Simulation and test of layout}{35}{10}{phase 4}
+\end{LIPSaktivitetslista}
+
+\subsection{System integration}
+The following activities should be carried out to integrate the modules together.
+\begin{LIPSaktivitetslista}
+	\LIPSaktivitet{41}{High level integration}{5,13,23,31}{15}{phase 2}
+	\LIPSaktivitet{48}{Implementation of test bench for the complete system}{37}{20}{phase 2}
+	\LIPSaktivitet{42}{Transistor level integration}{5,13,23,31}{10}{phase 3}
+	\LIPSaktivitet{43}{Layout level integration}{5,13,23,31}{15}{phase 4}
 \end{LIPSaktivitetslista}
 
 \subsection{Chip assembly}
 The following activity should be carried out to be able to manufacture the chip.
 \begin{LIPSaktivitetslista}
-	\LIPSaktivitet{37}{Off-chip hardware interface}{10,18,27,36}{30}{phase 5}
+	\LIPSaktivitet{37}{Off-chip hardware interface}{10,18,27,36}{20}{phase 5}
 \end{LIPSaktivitetslista}
 
 \subsection{Documentation}
