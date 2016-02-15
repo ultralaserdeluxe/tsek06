@@ -1,6 +1,6 @@
 BUILDDIR = build
 OUTDIR = pdf
-TEXDIR = tex
+TEXDIR = .
 TEXFILE = high_level_design_report.tex
 PDFFILE = $(addsuffix .pdf,$(basename $(TEXFILE)))
 

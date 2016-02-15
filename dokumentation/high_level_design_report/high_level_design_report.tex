@@ -1,0 +1,63 @@
+\documentclass[titlepage, a4paper]{article}
+\input{../mall/layout.tex}	% Importera generella layout-strukturer
+
+% Information nödvändig för generella layout-strukturer
+\newcommand{\LIPSredaktor}{Johannes Klasson}
+\newcommand{\LIPSversion}{P1B}
+\newcommand{\LIPSdokument}{Project Plan}
+\newcommand{\LIPSdokumenttyp}{Project Plan}
+\newcommand{\LIPSgranskatdatum}{2016-02-02}
+\newcommand{\LIPSgranskare}{Johannes Klasson}
+\newcommand{\LIPSgodkannare}{Martin Nielsen-Lönn}
+\newcommand{\LIPSgodkantdatum}{-}
+\newcommand{\LIPSkursnamn}{TSEK06}
+\newcommand{\LIPSprojektnamn}{16-bit Kogge-Stone Adder}
+\newcommand{\LIPSprojektgrupp}{Group 5}
+\newcommand{\LIPSartaltermin}{VT, 2016}
+\newcommand{\LIPSkund}{ISY}
+\newcommand{\LIPSkundkontakt}{Martin Nielsen-Lönn}
+\newcommand{\LIPSkursansvarig}{Atila Alvandpour}
+\newcommand{\LIPShandledare}{Martin Nielsen-Lönn}
+
+% Dokument-specifika paket
+\usepackage{tabularx}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{float}
+\usetikzlibrary{shapes, arrows}
+
+\pagenumbering{roman}
+
+
+\DeclareGraphicsRule{.0.pdf}{pdf}{*}{}
+
+\begin{document}
+
+\LIPSTitelsida
+
+\begin{LIPSprojektidentitet}
+  \LIPSgruppmedlem{Johan Isaksson}{Project Leader}{070-2688785}{johis024@student.liu.se}
+  \LIPSgruppmedlem{Johannes Klasson}{Document Manager}{073-8209003}{johkl226@student.liu.se}
+  \LIPSgruppmedlem{Jonas Tarasso}{Designer}{070-5738583}{jonta760@student.liu.se}
+  \LIPSgruppmedlem{Alexander Yngve}{Designer}{076-2749762}{aleyn573@student.liu.se}	
+\end{LIPSprojektidentitet}
+
+\newpage
+\tableofcontents	%Innehållsförteckning
+%\listoffigures
+%\listoftables
+
+\newpage
+
+\begin{LIPSdokumenthistorik}
+\LIPSversionsinfo{P1A}{2016-01-31}{First draft}{Johan Isaksson}
+\LIPSversionsinfo{P1B}{2016-02-02}{Fixed some small misspellings and typos.}{Johan Isaksson}
+\end{LIPSdokumenthistorik}
+
+\newpage
+\pagenumbering{arabic}	%Påbörja sidnumrering
+
+% Inledning, översikt osv
+
+
+\end{document}
