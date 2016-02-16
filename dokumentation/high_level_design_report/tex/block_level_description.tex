@@ -31,7 +31,6 @@ The Kogge-Stone adder consists of four simple blocks connected in a complex way.
   \includegraphics[clip,width=1.0\textwidth]{../figures/red}
   \caption{Schematic view of the red block.} \label{fig:red}
 \end{figure}
-\subsection{Comparator}
 
 \subsubsection{Yellow}
 
@@ -75,18 +74,18 @@ The Kogge-Stone adder consists of four simple blocks connected in a complex way.
 \begin{table}[H]
   \caption{Logic table of yellow with carry block.}
   \centering
-  \begin{tabular}{ccc|cc}
+  \begin{tabular}{ccc|c}
     \toprule
-    $P_i$ & $G_i$ & $G_{i,prev}$ & Function2 & Output \\
+    $P_i$ & $G_i$ & $G_{i,prev}$ & $G=(P_i \wedge G_{i,prev}) \vee G_i$  \\
     \midrule
-    0 & 0 & 0 & 0 & 0 \\
-    0 & 0 & 1 & 0 & 0 \\
-    0 & 1 & 0 & 0 & 0 \\
-    0 & 1 & 1 & 1 & 0 \\
-    1 & 0 & 0 & 0 & 0 \\
-    1 & 0 & 1 & 0 & 0 \\
-    1 & 1 & 0 & 0 & 1 \\
-    1 & 1 & 1 & 1 & 1 \\
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 1 & 0 & 1 \\
+    0 & 1 & 1 & 1 \\
+    1 & 0 & 0 & 0 \\
+    1 & 0 & 1 & 1 \\
+    1 & 1 & 0 & 1 \\
+    1 & 1 & 1 & 1 \\
     \bottomrule
     \label{tab:yellowcarry}
   \end{tabular}
@@ -105,14 +104,14 @@ The Kogge-Stone adder consists of four simple blocks connected in a complex way.
 \begin{table}[H]
   \caption{Logic table of sum block.}
   \centering
-  \begin{tabular}{cccc}
+  \begin{tabular}{cc|c}
     \toprule
-    Input & Function1 & Function2 & Output \\
+    $P_i$ & $C_{i-1}$ & $S_i=P_i \oplus C_{i-1}$ \\
     \midrule
-    00 & 1 & 0& 1\\
-    01 & 0 & 0 & 1\\
-    10 & 0 & 0 & 1\\
-    11 & 1 & 0 & 1\\
+    0 & 0 & 0 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0 \\
     \bottomrule
     \label{tab:sum}
   \end{tabular}
@@ -124,3 +123,6 @@ The Kogge-Stone adder consists of four simple blocks connected in a complex way.
   \includegraphics[clip,width=1.0\textwidth]{../figures/sum}
   \caption{Schematic view of the sum block.} \label{fig:sum}
 \end{figure}
+
+\subsection{Comparator}
+
