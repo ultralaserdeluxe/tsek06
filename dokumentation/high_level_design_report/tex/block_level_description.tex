@@ -3,11 +3,9 @@
 \subsection{SPI/PSRBR}
 
 \subsection{16-bit Kogge-Stone Adder}
-The Kogge-Stone adder consists of four simple blocks connected in a complex way.
+The Kogge-Stone adder consists of four simple blocks connected in a complex way. These four blocks can be seen in figure \ref{fig:red}-\ref{fig:sum}. The red block constitute the initial stage which takes two binary numbers $A$ and $B$ as input. The corresponding truth table is found in table \ref{tab:red}. The output signals $P$ and $G$ generated from this block are later used by other blocks in the adder. The $G$, also called the Generate signal, trickles down through the hierarchy of yellow, and yellow carry blocks to finally end up in the sum block. The truth table for this block can be found in table \ref{tab:sum}. Truth tables for the yellow and yellow carry blocks are found in table \ref{tab:yellow} and \ref{tab:yellowcarry}.
 
-\noindent \todo{Lägg till bild på hur blocken sitter ihop och förklaring om P och G signalerna.}
-
-\subsubsection{Red}
+\noindent \todo{Lägg till bild på hur blocken sitter ihop.}
 
 \begin{table}[H]
   \caption{Logic table of red block.}
@@ -28,11 +26,10 @@ The Kogge-Stone adder consists of four simple blocks connected in a complex way.
 \begin{figure}[H]
   \centering
   \captionsetup{justification=centering}
-  \includegraphics[clip,width=1.0\textwidth]{../figures/red}
+  \adjustbox{trim={.3\width} {0\height} {.3\width} {0\height},clip}
+  {\includegraphics[width=2.0\textwidth]{../figures/red}}
   \caption{Schematic view of the red block.} \label{fig:red}
 \end{figure}
-
-\subsubsection{Yellow}
 
 \begin{table}[H]
   \caption{Logic table of yellow block.}
@@ -65,11 +62,10 @@ The Kogge-Stone adder consists of four simple blocks connected in a complex way.
 \begin{figure}[H]
   \centering
   \captionsetup{justification=centering}
-  \includegraphics[clip,width=1.0\textwidth]{../figures/yellow}
+  \adjustbox{trim={.15\width} {0\height} {.12\width} {0\height},clip}
+  {\includegraphics[width=1.3\textwidth]{../figures/yellow}}
   \caption{Schematic view of the yellow block.} \label{fig:yellow}
 \end{figure}
-
-\subsubsection{Yellow with carry}
 
 \begin{table}[H]
   \caption{Logic table of yellow with carry block.}
@@ -94,12 +90,10 @@ The Kogge-Stone adder consists of four simple blocks connected in a complex way.
 \begin{figure}[H]
   \centering
   \captionsetup{justification=centering}
-  \adjustbox{trim={0\width} {0\height} {0\width} {.4\height},clip}
-  {\includegraphics[width=1.0\textwidth]{../figures/yellow_carry}}
+  \adjustbox{trim={.1\width} {0\height} {.1\width} {.4\height},clip}
+  {\includegraphics[width=1.2\textwidth]{../figures/yellow_carry}}
   \caption{Schematic view of the yellow carry block.} \label{fig:yellow_c}
 \end{figure}
-
-\subsubsection{Sum}
 
 \begin{table}[H]
   \caption{Logic table of sum block.}
@@ -125,4 +119,18 @@ The Kogge-Stone adder consists of four simple blocks connected in a complex way.
 \end{figure}
 
 \subsection{Comparator}
-
+\begin{table}[H]
+  \caption{Logic table of XNOR block.}
+  \centering
+  \begin{tabular}{cc|c}
+    \toprule
+    $A_i$ & $B_i$ & $Y = \overline{(A_i \oplus B_i)}$ \\
+    \midrule
+    0 & 0 & 1 \\
+    0 & 1 & 0 \\
+    1 & 0 & 0 \\
+    1 & 1 & 1 \\
+    \bottomrule
+    \label{tab:xnor}
+  \end{tabular}
+\end{table}
