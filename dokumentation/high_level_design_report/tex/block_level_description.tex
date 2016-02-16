@@ -1,7 +1,9 @@
 \section{Block Level Description}
 
-\subsection{SPI/PSRBR}
-
+\subsection{SPI\_in/PSBR}
+The SPI\_in module consists of a lot of registers and some control logic moving data between these registers. Since the PRBS module share some registers with the SPI\_in module, and the PRBS module is relatively small, we included it in the SPI\_in module. \\
+The first block in the SPI\_in module is the SPI\_recieve block. It consists of 16 resettable D flip-flops (DFFSR), that is connected one after another. They are clocked on the SPI clock, and on each positive clock pulse, we got a new bit to shift in. After 16 pulses we have 16 bits stored, and a load signal is triggered so that each bit is moved to the correct PRBS-register. \\
+The PRBS-registers are register that consists of four DFFSR (one for each addition) and that can be run in two different modes. During the first mode, the normal mode, the registers are triggered with a load signal, and the data to the first DFFSR comes from the SPI\_recieve block. During the second mode, the PRBS mode, the registers and triggered with the system clock, and the data to the first DFFSR is the value of the third and forth DFFSR passed trhough a XOR. The mode is choosen by the SPI\_enable signal.
 \subsection{16-bit Kogge-Stone Adder}
 The Kogge-Stone adder consists of four simple blocks connected in a complex way.
 
