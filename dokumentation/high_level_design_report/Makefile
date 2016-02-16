@@ -15,3 +15,6 @@ $(TEXDIR)/$(OUTDIR)/$(PDFFILE): $(TEXDIR)/$(TEXFILE) $(wildcard tex/*.tex)
 clean:
 	rm -rf $(TEXDIR)/$(BUILDDIR)
 	rm -rf $(TEXDIR)/$(OUTDIR)
+
+jonasclean:
+	rm high_level_design_report.aux high_level_design_report.fdb_latexmk high_level_design_report.fls high_level_design_report.log high_level_design_report.synctex.gz high_level_design_report.pdf high_level_design_report.toc
