@@ -3,7 +3,7 @@
 \subsection{SPI/PSRBR}
 
 \subsection{16-bit Kogge-Stone Adder}
-The Kogge-Stone adder consists of four simple blocks connected in a complex way. 
+The Kogge-Stone adder consists of four simple blocks connected in a complex way. These four blocks can be seen in figure \ref{fig:red}-\ref{fig:sum}. The red block constitute the initial stage which takes two binary numbers $A$ and $B$ as input. The corresponding truth table is found in table \ref{tab:red}. The output signals $P$ and $G$ generated from this block are later used by other blocks in the adder. The $G$, also called the Generate signal, trickles down through the hierarchy of yellow, and yellow carry blocks to finally end up in the sum block. The truth table for this block can be found in table \ref{tab:sum}. Truth tables for the yellow and yellow carry blocks are found in table \ref{tab:yellow} and \ref{tab:yellowcarry}.
 
 \noindent \todo{Lägg till bild på hur blocken sitter ihop och förklaring om P och G signalerna.}
 
@@ -126,7 +126,7 @@ The Kogge-Stone adder consists of four simple blocks connected in a complex way.
   \caption{Schematic view of the sum block.} \label{fig:sum}
 \end{figure}
 
-\subsection{Comparator}
+\subsection{Comparator}@
 \begin{table}[H]
   \caption{Logic table of XNOR block.}
   \centering
