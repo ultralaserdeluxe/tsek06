@@ -4,7 +4,7 @@ TEXDIR = .
 TEXFILE = high_level_design_report.tex
 PDFFILE = $(addsuffix .pdf,$(basename $(TEXFILE)))
 
-$(TEXDIR)/$(OUTDIR)/$(PDFFILE): $(TEXDIR)/$(TEXFILE)
+$(TEXDIR)/$(OUTDIR)/$(PDFFILE): $(TEXDIR)/$(TEXFILE) $(wildcard tex/*.tex)
 	cd $(dir $<) ; mkdir -p $(BUILDDIR)
 	cd $(dir $<) ; pdflatex -halt-on-error -output-directory=$(BUILDDIR) $(notdir $<)
 	cd $(dir $<) ; pdflatex -halt-on-error -output-directory=$(BUILDDIR) $(notdir $<)
