@@ -1,17 +1,16 @@
-\section{Simulation Results}
+\section{Simulation Results} \label{sec:simulation_results}
 
 \subsection{SPI In}
-
-\subsubsection{Recieve}
-
-\subsubsection{Hanken 2}
-
-\subsubsection{Hanken 3}
-
+The first thing to test in the system is where it all begins, at the input. The basics of it can be seen in \todo{figure ?? test\_spi\_receive.png}. As can be seen, as soon as the SPI\_enable signal goes low and the SPI\_clk starts we start to receive one bit on every positive edge. The data is then shifted trough all of the 16 registers. As the 16th bit is shifted in, the first load signal is triggered. Every 16 bits after that another load signal is triggered, and this can be seen in \todo{figure ?? test\_spi\_load.png}. One can also see that once the last load signal is triggered, SPI\_enable goes high again.\\
+The last thing in the SPI\_in module to test is how the data travels out of the PRBS registers. This can be seen in \todo{figure ?? test\_spi\_prbs.png}. One important thing to note is that as soon as SPI\_enable goes high, the registers are triggered on the system clock. As one can see in the figure, the first bit is ready for a long time, and as soon as the last bit is ready, we start to add at full speed. And after the four bits are done the system continues to add the pseudo random numbers. 
 \subsection{Kogge-Stone Adder}
-
-\subsection{SPI Out}
+\todo{JONAS}
 
 \subsection{Comparator}
+\todo{JONAS}
+
+\subsection{SPI Out}
+\todo{JOHAN}
 
 \subsection{Top Level}
+\todo{JONAS}

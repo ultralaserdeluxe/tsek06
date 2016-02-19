@@ -1,0 +1,82 @@
+\section{Truth Tables for the Kogge-Stone Adder} \label{app:ks_truth}
+
+\begin{table}[H]
+  \caption{Logic table of red block.}
+  \centering
+  \begin{tabular}{cc|cc}
+    \toprule
+    $A_i$ & $B_i$ & $P=A_i \oplus B_i$ & $G=A_i \wedge B_i$ \\
+    \midrule
+    0 & 0 & 0 & 0 \\
+    0 & 1 & 1 & 0 \\
+    1 & 0 & 1 & 0 \\
+    1 & 1 & 0 & 1 \\
+    \bottomrule
+    \label{tab:red}
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \caption{Logic table of yellow block.}
+  \centering
+  \begin{tabular}{cccc|cc}
+    \toprule
+    $G_i$ & $G_{i,prev}$ & $P_i$ & $P_{i,prev}$ & $P=P_i \wedge P_{i,prev}$ & $G=(P_i \wedge G_{i,prev}) \vee G_i$ \\
+    \midrule
+    0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 1 & 1 & 0 \\
+    0 & 1 & 0 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 1 & 0 & 0 \\
+    0 & 1 & 1 & 0 & 0 & 1 \\
+    0 & 1 & 1 & 1 & 1 & 1 \\
+    1 & 0 & 0 & 0 & 0 & 1 \\
+    1 & 0 & 0 & 1 & 0 & 1 \\
+    1 & 0 & 1 & 0 & 0 & 1 \\
+    1 & 0 & 1 & 1 & 1 & 1 \\
+    1 & 1 & 0 & 0 & 0 & 1 \\
+    1 & 1 & 0 & 1 & 0 & 1 \\
+    1 & 1 & 1 & 0 & 0 & 1 \\
+    1 & 1 & 1 & 1 & 1 & 1 \\
+    \bottomrule
+    \label{tab:yellow}
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \caption{Logic table of yellow with carry block.}
+  \centering
+  \begin{tabular}{ccc|c}
+    \toprule
+    $P_i$ & $G_i$ & $G_{i,prev}$ & $G=(P_i \wedge G_{i,prev}) \vee G_i$  \\
+    \midrule
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 1 & 0 & 1 \\
+    0 & 1 & 1 & 1 \\
+    1 & 0 & 0 & 0 \\
+    1 & 0 & 1 & 1 \\
+    1 & 1 & 0 & 1 \\
+    1 & 1 & 1 & 1 \\
+    \bottomrule
+    \label{tab:yellowcarry}
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \caption{Logic table of sum block.}
+  \centering
+  \begin{tabular}{cc|c}
+    \toprule
+    $P_i$ & $C_{i-1}$ & $S_i=P_i \oplus C_{i-1}$ \\
+    \midrule
+    0 & 0 & 0 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0 \\
+    \bottomrule
+    \label{tab:sum}
+  \end{tabular}
+\end{table}
+
