@@ -11,9 +11,11 @@ The simulation of the adder can be seen in test\_koggeadder and the input sequen
 The simulation of the comparator is seen in test\_corr. The same reasoning as in the section above applies here. The simulation is quite striped down due to readability but one can clearly see that out, which is BISTout, is high if and only if the corr-signals and sum signals match.
 
 \subsection{SPI Out}
-This section describes the resulting functionality of the system. The critical parts of the module are the events after a transition of the spi enable signal.
-\subsubsection{High enable signal}
-Figure \ref{sim_en_h} shows the simulation of the module when the spi enable signal goes high. As can be seen, the control logic successfully creates the four enable pulses for the different sections. The four clock cycles long pulse prevents the occurrence of more than one pulse on any of the enable signals. 
+The critical parts of this module are the events after a transition on the spi enable signal.\\
+
+
+In the image sim\_spi\_en\_high, a simulation of the module when the spi enable signal goes high is shown. As can be seen, the control logic successfully creates the four enable pulses for the different sections. The four clock cycles long pulse prevents the occurrence of more than one pulse on any of the enable signals. \\
+
 
 
 %\begin{figure}[H]
@@ -25,8 +27,7 @@ Figure \ref{sim_en_h} shows the simulation of the module when the spi enable sig
 %\end{figure}
 
 
-\subsubsection{Low enable signal}
-Figure \ref{sim_en_l} shows that the enable signals are the same as the spi clock.
+In the image sim\_spi\_en\_low a simulation of the module when spi enable goes low is shown. As can be seen, the four enable signals are the same as the spi clock.
 
 %\begin{figure}[H]
 %\centering
