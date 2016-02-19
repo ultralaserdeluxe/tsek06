@@ -1,0 +1,6 @@
+PWD /Users/jonta760/Google Drive/tsek06/dokumentation/high_level_design_report/tex
+INPUT /usr/local/texlive/2015/texmf.cnf
+INPUT /usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT block_level_description.tex
+OUTPUT block_level_description.log
