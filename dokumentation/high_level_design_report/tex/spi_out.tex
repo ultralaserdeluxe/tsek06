@@ -49,30 +49,5 @@ Our implementation uses a pulse generator, a 2-bit counter, a decoder to select 
 This unit outputs the data with most significant bit first, in this case the carry output. To avoid using extra hardware, the group decided to go away from the more standard spi protocol.  \\
 Data is both written and read by the chip on the rising edge of the the spi clock. This means that the circuitry communicating with the chip has to read and write on the falling edge of the clock. Additionally, the first bit of the output will be available on the second falling edge after spi enable goes low.
 
-\subsection{Simulation results}
-This section describes the resulting functionality of the system. The critical parts of the module are the events after a transition of the spi enable signal.
-\subsubsection{High enable signal}
-Figure \ref{sim_en_h} shows the simulation of the module when the spi enable signal goes high. As can be seen, the control logic successfully creates the four enable pulses for the different sections. The four clock cycles long pulse prevents the occurrence of more than one pulse on any of the enable signals. 
-
-
-%\begin{figure}[H]
-%\centering
-%\captionsetup{justification=centering}
-%\includegraphics[scale=0.2]{../figures/spi_en_high.png}
-%\caption{Control logic for spi output, second half}
-%\label{spi_en_h}
-%\end{figure}
-
-
-\subsubsection{Low enable signal}
-Figure \ref{sim_en_l} shows that the enable signals are the same as the spi clock.
-
-%\begin{figure}[H]
-%\centering
-%\captionsetup{justification=centering}
-%\includegraphics[scale=0.2]{../figures/spi_out_low.png}
-%\caption{Control logic for spi output, second half}
-%\label{spi_en_l}
-%\end{figure}
 
 
