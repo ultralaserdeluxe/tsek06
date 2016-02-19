@@ -34,23 +34,24 @@
 \DeclareGraphicsRule{.0.pdf}{pdf}{*}{}
 
 \begin{document}
-
+\pagenumbering{gobble}
 \LIPSTitelsida
-
+\pagenumbering{gobble}
 \begin{LIPSprojektidentitet}
   \LIPSgruppmedlem{Johan Isaksson}{Project Leader}{070-2688785}{johis024@student.liu.se}
   \LIPSgruppmedlem{Johannes Klasson}{Document Manager}{073-8209003}{johkl226@student.liu.se}
-  \LIPSgruppmedlem{Jonas Tarasso}{Designer}{070-5738583}{jonta760@student.liu.se}
-  \LIPSgruppmedlem{Alexander Yngve}{Designer}{076-2749762}{aleyn573@student.liu.se}	
+  \LIPSgruppmedlem{Jonas Tarassu}{VLSI Designer}{070-5738583}{jonta760@student.liu.se}
+  \LIPSgruppmedlem{Alexander Yngve}{VLSI Designer}{076-2749762}{aleyn573@student.liu.se}	
 \end{LIPSprojektidentitet}
 
 \newpage
+\pagenumbering{gobble}
 \tableofcontents	%Innehållsförteckning
 %\listoffigures
 %\listoftables
 
 \newpage
-
+\pagenumbering{gobble}
 \begin{LIPSdokumenthistorik}
 \LIPSversionsinfo{P1A}{2016-02-15}{First draft}{Johan Isaksson}
 \end{LIPSdokumenthistorik}
@@ -69,6 +70,11 @@
 \input{tex/simulation_results.tex}
 
 \input{tex/risks_and_delays.tex}
+\newpage
+
+\bibliography{mybib}{}
+\bibliographystyle{plain}
+
 \newpage
 
 \begin{appendix}
