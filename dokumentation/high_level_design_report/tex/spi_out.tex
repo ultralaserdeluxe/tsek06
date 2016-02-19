@@ -1,8 +1,6 @@
-\newpage
+ \newpage
 \section{SPI out}
-This module is responsible for correct output of the data from the adder.
-
-
+This module is responsible for correctly outputtig data from the adder.
 
 
 \subsection{Shift register}
@@ -16,8 +14,11 @@ The output consist of four sums, each containing 16 sum bits plus one carry outp
 \label{mux_dff}
 \end{figure}
 
+\raggedright The spi enable signal is directly connected to the control signal of the multiplexer so that when spi enable is low, the input value to the D flip-flop is taken from the previous cell. 
+ 
 
 
+\newpage
 
 \subsection{Control logic}
 The control logic is needed to load the long shift register with the correct data. \\
@@ -32,13 +33,44 @@ Our implementation uses a pulse generator, a 2-bit counter, a decoder to select 
 \label{spi_out1}
 \end{figure}
 
+\newpage
+\raggedright As can be seen to the right in figure \ref{spi_out2}, there are four enable signals: E1, E2, E3, E4. Each one of those signal enables a specific part of the shift register. If spi enable is low, all of the signals would be equal to the spi clock so that data can be shifted out. Otherwise, if the spi enable signal is high and, for example, E1 is high, the 17-bit part of the shift register corresponding to the sum of addition 1 would be loaded with the output from the adder.
 \begin{figure}[H]
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.2]{../figures/spi_out2.png}
+\includegraphics[scale=0.3]{../figures/spi_out2.png}
 \caption{Control logic for spi output, second half}
 \label{spi_out2}
 \end{figure}
 
 \subsection{Protocol}
-This unit outputs the data with most significant bit first, in this case the carry output. To not use 
+This unit outputs the data with most significant bit first, in this case the carry output. To avoid using extra hardware, the group decided to go away from the more standard spi protocol.  \\
+Data is both written and read by the chip on the rising edge of the the spi clock. This means that the circuitry communicating with the chip has to read and write on the falling edge of the clock. Additionally, the first bit of the output will be available on the second falling edge after spi enable goes low.
+
+\subsection{Simulation results}
+This section describes the resulting functionality of the system. The critical parts of the module are the events after a transition of the spi enable signal.
+\subsubsection{High enable signal}
+Figure \ref{sim_en_h} shows the simulation of the module when the spi enable signal goes high. As can be seen, the control logic successfully creates the four enable pulses for the different sections. The four clock cycles long pulse prevents the occurrence of more than one pulse on any of the enable signals. 
+
+
+%\begin{figure}[H]
+%\centering
+%\captionsetup{justification=centering}
+%\includegraphics[scale=0.2]{../figures/spi_en_high.png}
+%\caption{Control logic for spi output, second half}
+%\label{spi_en_h}
+%\end{figure}
+
+
+\subsubsection{Low enable signal}
+Figure \ref{sim_en_l} shows that the enable signals are the same as the spi clock.
+
+%\begin{figure}[H]
+%\centering
+%\captionsetup{justification=centering}
+%\includegraphics[scale=0.2]{../figures/spi_out_low.png}
+%\caption{Control logic for spi output, second half}
+%\label{spi_en_l}
+%\end{figure}
+
+
