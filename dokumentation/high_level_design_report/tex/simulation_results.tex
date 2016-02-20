@@ -14,28 +14,9 @@ The simulation of the comparator is seen in test\_corr. The same reasoning as in
 The critical parts of this module are the events after a transition on the spi enable signal.\\
 
 
-In the image sim\_spi\_en\_high, a simulation of the module when the spi enable signal goes high is shown. As can be seen, the control logic successfully creates the four enable pulses for the different sections. The four clock cycles long pulse prevents the occurrence of more than one pulse on any of the enable signals. \\
+In the image test\_spi\_out a simulation of the module is shown. When the spi enable signal goes high, the control logic successfully creates the four enable pulses for the different sections. The four clock cycles long pulse (4p) prevents the occurrence of more than one pulse on any of the enable signals. The counter enable signal (2b\_en) goes low to prevent the counter from restarting before the 4p-signal ends. \\
+When spi enable goes low, the four enable signals are the same as the spi clock.\\
 
-
-
-%\begin{figure}[H]
-%\centering
-%\captionsetup{justification=centering}
-%\includegraphics[scale=0.2]{../figures/spi_en_high.png}
-%\caption{Control logic for spi output, second half}
-%\label{spi_en_h}
-%\end{figure}
-
-
-In the image sim\_spi\_en\_low a simulation of the module when spi enable goes low is shown. As can be seen, the four enable signals are the same as the spi clock.
-
-%\begin{figure}[H]
-%\centering
-%\captionsetup{justification=centering}
-%\includegraphics[scale=0.2]{../figures/spi_out_low.png}
-%\caption{Control logic for spi output, second half}
-%\label{spi_en_l}
-%\end{figure}
 
 \subsection{Top Level}
 One can get a overall picture of the behaviour of the system by looking at at the simulations in the order spi\_receive, spi\_prbs, koggeadder, corr and last the spi\_out. This is possible because all this simulations are part of a bigger one.
