@@ -1,11 +1,105 @@
 \section{Activities}
 This chapter describes activities and tasks needed for each of the modules/subsystems in this project.
 
+\subsection{Logic gates}
+The following activities should be carried out to implement all the logic gates needed for the system.\\
+\begin{tabular}{| l | l | c | c | c | c | c |}	
+	
+\hline
+ & & & \multicolumn{4}{ |c| }{\textbf{Hours}} \\ \cline{4-7} 
+\textbf{\#} & \textbf{Description  \hspace{1.5 cm}} & \textbf{Dependencies} & \textbf{Phase 2} & \textbf{Phase 3} & \textbf{Phase 4} & \textbf{Phase 5} \\
+\hline
+49 & INV &  & 1 & 1 & 1 & \\
+\hline
+50 & NAND &  & 1 & 1 & 1 & \\
+\hline
+51 & AND & 49,50 & 1 & 1 & 1 & \\
+\hline
+52 & NOR &  & 1 & 1 & 2 & \\
+\hline
+53 & OR & 49,52 & 1 & 1 & 1 & \\
+\hline
+54 & XOR &  & 1 & 1 & 1 & \\
+\hline
+55 & XNOR & 49,54 & 1 & 1 & 2 & \\
+\hline
+56 & DFFSR &  & 1 & 1 & 1 & \\
+\hline
+
+
+\end{tabular}
+
+
+\subsection{Functional logic blocks}
+The following activities should be carried out to implement the additional logic blocks needed for the system. These block are combinations of logic gates to achieve the wanted functionality.\\
+
+\begin{tabular}{| l | l | c | c | c | c | c |}	
+	
+\hline
+ & & & \multicolumn{4}{ |c| }{\textbf{Hours}} \\ \cline{4-7} 
+\textbf{\#} & \textbf{Description  \hspace{1.5 cm}} & \textbf{Dependencies} & \textbf{Phase 2} & \textbf{Phase 3} & \textbf{Phase 4} & \textbf{Phase 5} \\
+\hline
+57 & TFFSR & 54,56 &  & 1 & 1 & \\
+\hline
+58 & 2:1 MUX & 49,50 &  & 2 & 2 & \\
+\hline
+59 & 2:4 DECODER & 49,52 &  & 2 & 2 & \\
+\hline
+60 & Counter bit cell & 51,57 &  & 1 & 1 & \\
+\hline
+61 & 2-bit counter & 60 &  & 2 & 2 & \\
+\hline
+62 & 6-bit counter & 60 &  & 2 & 2 & \\
+\hline
+63 & 1 pulse & 49,51,56 &  & 1 & 1 & \\
+\hline
+64 & 4 pulse & 49,51,56 &  & 2 & 2 & \\
+\hline
+
+
+\end{tabular}
+
+
 \subsection{SPI}
-The following activities should be carried out to implement the Serial Peripheral unit.
+The following activities should be carried out to implement the Serial Peripheral unit.\\
+
+\begin{tabular}{| l | l | c | c | c | c | c |}	
+	
+\hline
+ & & & \multicolumn{4}{ |c| }{\textbf{Hours}} \\ \cline{4-7} 
+\textbf{\#} & \textbf{Description  \hspace{1.5 cm}} & \textbf{Dependencies} & \textbf{Phase 2} & \textbf{Phase 3} & \textbf{Phase 4} & \textbf{Phase 5} \\
+\hline
+{1} & {Define structure of the SPI unit} & {} & {10} & {phase 2} &  & \\
+\hline
+50 & NAND &  &  & 1 & 1 & \\
+\hline
+51 & AND & 49,50 &  & 1 & 1 & \\
+\hline
+52 & NOR &  &  & 1 & 2 & \\
+\hline
+53 & OR & 49,52 &  & 1 & 1 & \\
+\hline
+54 & XOR &  &  & 1 & 1 & \\
+\hline
+55 & XNOR & 49,54 &  & 1 & 2 & \\
+\hline
+56 & DFFSR &  &  & 1 & 1 & \\
+\hline
+57 & TFFSR & 54,56 &  & 1 & 1 & \\
+\hline
+58 & 2:1 MUX & 49,50 &  & 2 & 2 & \\
+\hline
+59 & 2:4 DECODER & 49,52 &  & 2 & 2 & \\
+\hline
+
+
+\end{tabular}
+
+
+
 \begin{LIPSaktivitetslista}
 	\LIPSaktivitet{1}{Define structure of the SPI unit}{}{10}{phase 2}	
-	\LIPSaktivitet{2}{Implement counters in Verilog-A}{1}{10}{phase 2}
+	\sout{\LIPSaktivitet{2}{Implement counters in Verilog-A}{1}{10}{phase 2}}
 	\LIPSaktivitet{3}{Implement control logic in Verilog-A}{1}{10}{phase 2}
 	\LIPSaktivitet{4}{Implement 1:4 decoder in Verilog-A}{1}{10}{phase 2}
 	\LIPSaktivitet{5}{Integrate to high level design of SPI}{2,3,4}{10}{phase 2}
@@ -16,6 +110,8 @@ The following activities should be carried out to implement the Serial Periphera
 	\LIPSaktivitet{9}{Implement layout level design of SPI unit}{8}{30}{phase 4}
 	\LIPSaktivitet{10}{Simulation and test of layout}{9}{20}{phase 4}
 \end{LIPSaktivitetslista}
+
+\subsection{SPI out}
 
 \subsection{Number generator}
 The following activities should be carried out to implement a number generator using pseudo random bit sequence (PRBS).
