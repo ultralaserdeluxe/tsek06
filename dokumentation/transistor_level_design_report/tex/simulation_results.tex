@@ -14,8 +14,13 @@ The simulation of the comparator is seen in test\_corr. The same reasoning as in
 The critical parts of this module are the events after a transition on the spi enable signal.\\
 
 
-In the image test\_spi\_out a simulation of the module is shown. When the spi enable signal goes high, the control logic successfully creates the four enable pulses for the different sections. The four clock cycles long pulse (4p) prevents the occurrence of more than one pulse on any of the enable signals. The counter enable signal (2b\_en) goes low to prevent the counter from restarting before the 4p-signal ends. \\
-When spi enable goes low, the four enable signals are the same as the spi clock.\\
+
+
+In the image spi\_out\_control\_unbuffered a simulation of the behaviour when the SPI enable goes high. As can be seen, the four enable pulses are created correctly but they are very weak. This simulation shows the system before buffering the enable signals. \\
+In the image spi\_out\_control\_buffered a simulation of the system after buffering the signals can be seen.\\
+
+
+When spi enable goes low, the four enable signals are the same as the spi clock which can be seen in the image spi\_out\_control2. \\
 
 
 \subsection{Top Level}

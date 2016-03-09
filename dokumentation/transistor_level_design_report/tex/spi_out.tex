@@ -44,7 +44,7 @@ The solution was to size the the multiplexer generating the control signals. The
 
 
 \subsubsection{Protocol}
-Due to a misunderstanding in the group, regarding if the SPI clock should be kept high or low during the high time of the SPI enable signal, the data on the spi output is now available for read already on the first falling edge of the SPI clock. This is possible as the group decided to keep the clock low during high time of SPI enable so that data can be written to the output at the first rising edge.
+Due to a misunderstanding in the group, regarding if the SPI clock should be kept high or low during the high time of the SPI enable signal, the data on the spi output is now available for read already on the first falling edge of the SPI clock. This is possible as the group decided to keep the clock low during high time of SPI enable so that the data can be written to the output at the first rising edge as usual but the first falling edge will come afterwards instead.
 
 
 
