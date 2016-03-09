@@ -1,9 +1,2 @@
 \section{Block Level Description} \label{sec:block_level}
-This section contains block level descriptions of all parts of the system seen in figure \ref{fig:top_level}.
-
-\begin{figure}[H]
-  \centering
-  \captionsetup{justification=centering}
-  \includegraphics[scale=0.5]{../figures/TOP.pdf}
-  \caption{Block diagram of the system.} \label{fig:top_level}
-\end{figure}
+Much of the block level descriptions can be seen in the high level report, but the transistor view of the leaf-cells will be described in this chapter. To find good sizes for our gates we used a very simple sizing strategy. Start small, and if the signal is to weak to drive the components, we just size it up and if necessary, make a buffer for it. The transistor schematic of the basic blocks like AND, OR, DFF etc. are simple enough that we do not include any description of them.
