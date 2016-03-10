@@ -1,7 +1,7 @@
 BUILDDIR = build
 OUTDIR = pdf
 TEXDIR = .
-TEXFILE = high_level_design_report.tex
+TEXFILE = transistor_level_design_report.tex
 PDFFILE = $(addsuffix .pdf,$(basename $(TEXFILE)))
 
 $(TEXDIR)/$(OUTDIR)/$(PDFFILE): $(TEXDIR)/$(TEXFILE) $(wildcard tex/*.tex)
@@ -17,4 +17,4 @@ clean:
 	rm -rf $(TEXDIR)/$(OUTDIR)
 
 jonasclean:
-	rm high_level_design_report.aux high_level_design_report.fdb_latexmk high_level_design_report.fls high_level_design_report.log high_level_design_report.synctex.gz high_level_design_report.pdf high_level_design_report.toc
+	rm transistor_level_design_report.aux transistor_level_design_report.fdb_latexmk transistor_level_design_report.fls transistor_level_design_report.log transistor_level_design_report.synctex.gz transistor_level_design_report.pdf transistor_level_design_report.toc
