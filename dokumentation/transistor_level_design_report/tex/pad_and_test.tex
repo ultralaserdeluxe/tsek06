@@ -2,8 +2,8 @@
 The following signals will be connected to external pins on the chip, where the first seven are inputs and the last five are outputs:
 \begin{itemize}
 	\item Vdd1 - Will provide most of the system with power and will be a steady 3.3 V.
-	\item Vdd2 - Will provide the adder with power and it might vary from 3.3 V downto below threshold-voltage
-	\item GND - Ground
+	\item Vdd2 - Will provide the adder with power and it might vary from 3.3 V downto below threshold-voltage.
+	\item GND - Ground.
 	\item Clk - This is the clock for the adder, some registers and control logic. Should have a frequency of at least 200 MHz at 3.3 V. Will be lower as we decrease the supply voltage.
 	\item SPI\_clk - This clock is used by the input and output unit and should be at least five times slower than the system clock. Should also be low if SPI\_en is inactive.
 	\item SPI\_en - Active low. Should go high on the first negative flank of SPI\_clk after the last value is read.
