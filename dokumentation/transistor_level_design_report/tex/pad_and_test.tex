@@ -1,17 +1,24 @@
 \section{Pad Assignment and Early Test Plan}
-The following signals will be connected to external pins on the chip, where the first seven are inputs and the last five are outputs:
-\begin{itemize}
-	\item Vdd1 - Will provide most of the system with power and will be a steady \SI{3.3}{\volt}.
-	\item Vdd2 - Will provide the adder with power and it might vary from \SI{3.3}{\volt} downto threshold-voltage.
-	\item GND - Ground.
-	\item Clk - This is the clock for the adder, some registers and control logic. Should have a frequency of at least \SI{200}{\mega\hertz} at \SI{3.3}{\volt}. Will be lower as we decrease the voltage of Vdd2.
-	\item SPI\_clk - This clock is used by the input and output unit and should be at least five times slower than the system clock. Should also be low if SPI\_en is inactive.
-	\item SPI\_en - Active low. Should go high on the first negative flank of SPI\_clk after the last value is read.
-	\item SPI\_in - Updates it's value as soon as SPI\_en goes low, and should have it's value ready on the first positive flank of SPI\_clk, since this is when we read the value. The value of SPI\_in should then be updated on every negative flank of SPI\_clk.
-	\item SPI\_out - The data is available for read on the first falling edge of SPI\_clk after SPI\_en has gone active.
-	\item BISTout - If the IN-data is correct, BISTout should be constant high after the first addition is done until the the PRBS-bit is set. 
-	\item Cin - Used to measure propagation delay.
-	\item Cout - Used to measure propagation delay.
-	\item Sum15 - Used to measure propagation delay.
-\end{itemize}
- 
+Table \ref{tab:pins} shows the pin assignments for the chip.
+
+\begin{table}[H]
+  \caption{Pin assignments}
+  \centering
+  \begin{tabularx}{\linewidth}{|l|l|l|X|}
+    \hline
+    \textbf{Name} & \textbf{Direction} & \textbf{Type} & \textbf{Description} \\ \hline
+    Vdd1 & INOUT & Analog & Will provide most of the system with power and will be a steady \SI{3.3}{\volt}. \\ \hline
+    Vdd2 & INOUT & Analog & Will provide the adder with power and it might vary from \SI{3.3}{\volt} downto threshold-voltage. \\ \hline
+    GND &  INOUT & Analog & Ground. \\ \hline
+    Clk & IN & Digital & This is the clock for the adder, some registers and control logic. Should have a frequency of at least \SI{200}{\mega\hertz} at \SI{3.3}{\volt}. Will be lower as we decrease the voltage of Vdd2. \\ \hline
+    SPI\_clk & IN & Digital & This clock is used by the input and output unit and should be at least five times slower than the system clock. Should also be low if SPI\_en is inactive. \\ \hline
+    SPI\_en & IN & Digital & Active low. Should go high on the first negative flank of SPI\_clk after the last value is read. \\ \hline
+    SPI\_in & IN & Digital & Updates it's value as soon as SPI\_en goes low, and should have it's value ready on the first positive flank of SPI\_clk, since this is when we read the value. The value of SPI\_in should then be updated on every negative flank of SPI\_clk. \\ \hline
+    SPI\_out & OUT & Digital & The data is available for read on the first falling edge of SPI\_clk after SPI\_en has gone active. \\ \hline
+    BISTout & OUT & Digital & If the IN-data is correct, BISTout should be constant high after the first addition is done until the the PRBS-bit is set.  \\ \hline
+    Cin & IN & Digital & Used to measure propagation delay. \\ \hline
+    Cout & OUT & Analog & Used to measure propagation delay. \\ \hline
+    Sum15 & OUT & Analog & Used to measure propagation delay. \\ \hline
+  \end{tabularx}
+  \label{tab:pins}
+\end{table}
