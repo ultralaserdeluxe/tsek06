@@ -1,15 +1,15 @@
 \section{Pad Assignment and Early Test Plan}
 The following signals will be connected to external pins on the chip, where the first seven are inputs and the last five are outputs:
 \begin{itemize}
-	\item Vdd1 - Will provide most of the system with power and will be a steady 3.3 V.
-	\item Vdd2 - Will provide the adder with power and it might vary from 3.3 V downto below threshold-voltage.
+	\item Vdd1 - Will provide most of the system with power and will be a steady \SI{3.3}{\volt}.
+	\item Vdd2 - Will provide the adder with power and it might vary from \SI{3.3}{\volt} downto threshold-voltage.
 	\item GND - Ground.
-	\item Clk - This is the clock for the adder, some registers and control logic. Should have a frequency of at least 200 MHz at 3.3 V. Will be lower as we decrease the supply voltage.
+	\item Clk - This is the clock for the adder, some registers and control logic. Should have a frequency of at least \SI{200}{\mega\hertz} at \SI{3.3}{\volt}. Will be lower as we decrease the voltage of Vdd2.
 	\item SPI\_clk - This clock is used by the input and output unit and should be at least five times slower than the system clock. Should also be low if SPI\_en is inactive.
 	\item SPI\_en - Active low. Should go high on the first negative flank of SPI\_clk after the last value is read.
-	\item SPI\_in - Updates it's value as soon as SPI\_en goes low, and should have it's value ready on the first positive flank of SPI\_clk, as this is when we read the value. The value of SPI\_in should then be updated on every negative flank of SPI\_clk.
+	\item SPI\_in - Updates it's value as soon as SPI\_en goes low, and should have it's value ready on the first positive flank of SPI\_clk, since this is when we read the value. The value of SPI\_in should then be updated on every negative flank of SPI\_clk.
 	\item SPI\_out - The data is available for read on the first falling edge of SPI\_clk after SPI\_en has gone active.
-	\item BIST\_out - If the in-data is correct, this should be constant high after the first addition is done. 
+	\item BISTout - If the IN-data is correct, BISTout should be constant high after the first addition is done until the the PRBS-bit is set. 
 	\item Cin - Used to measure propagation delay.
 	\item Cout - Used to measure propagation delay.
 	\item Sum15 - Used to measure propagation delay.
