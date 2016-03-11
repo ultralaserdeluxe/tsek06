@@ -13,9 +13,9 @@ The simulation of the comparator was left out since the comparator block is part
 \subsection{SPI Out}
 The critical parts of this module are the events after a transition on the spi enable signal.\\
 
-In the image spi\_out\_control a simulation of the behaviour when the SPI enable goes high. The simulation shows that the buffering of the signals successfully achieved satisfying rise and fall times For the enable signals.\\
+In Fig. \ref{fig:spi_out1} a simulation of the behaviour when the SPI enable goes high. The simulation shows that the buffering of the signals successfully achieved satisfying rise and fall times For the enable signals.\\
 
-When spi enable goes low, the four enable signals are the same as the spi clock which can be seen in the image spi\_out\_control2. \\
+When spi enable goes low, the four enable signals are the same as the spi clock which can be seen in the image \ref{fig:spi_out2}. \\
 
 \subsection{Top Level}
 One can get a overall picture of the behaviour of the system by looking at at the simulations in the order spi\_receive, spi\_prbs and last the spi\_out. This is possible because all this simulations are part of a bigger one. The Kogge-Stone adder was left out here for simplicity.
