@@ -1,0 +1,4 @@
+
+\subsection{SPI-in/PRBS}
+This module only use basic leaf-cells at the transistor level. However, there are a few noteworthy things regarding the sizing of these basic blocks. Some of the signals are connected to a large amount of devices (60+), which means that the signal gets really weak. This was solved by just making the gates a bit bigger, or by using a buffer. SPI\_en is using a 9x buffer, SPI\_clk is using a 27x buffer and test\_mode is using a 9x buffer. Clk\_en is the result from an OR gate, and the NOR gate inside it is 6 times bigger and the inverter is 18 times bigger than our reference inverter.
+

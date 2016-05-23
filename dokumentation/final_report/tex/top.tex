@@ -1,0 +1,27 @@
+\section{Block Level Description} \label{sec:block_level}
+Much of the block level descriptions can be seen in the high level report, but the transistor view of the leaf-cells will be described in this chapter. To find good sizes for our gates we used a very simple sizing strategy. Start small, and if the signal is to weak to drive the components, we just size it up and if necessary, make a buffer for it. The transistor schematic of the basic blocks like AND, OR, DFF etc. are simple enough to leave out the description for them. In Fig. \ref{block_second} an updated block diagram of the complete system can be seen.
+
+\begin{figure}[H]
+  \centering
+  \captionsetup{justification=centering}
+  \includegraphics[scale=0.5]{../figures/TOP.pdf}
+  \caption{Block diagram of the system first iteration.} \label{fig:block_first}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.175]{../figures/top_level.png}
+\caption{Block diagram of the system second iteration.}
+\label{block_second}
+\end{figure}
+
+% \begin{figure}[H]
+% \centering
+% \captionsetup{justification=centering}
+% \includegraphics[scale=0.175]{../figures/top_level_final.png}
+% \caption{Block diagram of the system final iteration.}
+% \label{block_final}
+% \end{figure}
+
+\noindent The updated diagram contains additional registers for synchronizing the signal before and after the comparator. This was done to provide more stable signals to the comparator and to have a more easily interpreted BISTout signal. The drawback is that the BISTout signal is available two clock cycles after the addition took place which isn't very much of a problem.

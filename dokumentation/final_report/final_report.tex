@@ -1,0 +1,86 @@
+\documentclass[titlepage, a4paper]{article}
+\input{../mall/layout.tex}	% Importera generella layout-strukturer
+
+% Information nödvändig för generella layout-strukturer
+\newcommand{\LIPSredaktor}{Johannes Klasson}
+\newcommand{\LIPSversion}{P1A}
+\newcommand{\LIPSdokument}{Transistor-Level Design Report}
+\newcommand{\LIPSdokumenttyp}{Transistor-Level Design Report}
+\newcommand{\LIPSgranskatdatum}{2016-05-26}
+\newcommand{\LIPSgranskare}{Johannes Klasson}
+\newcommand{\LIPSgodkannare}{Martin Nielsen-Lönn}
+\newcommand{\LIPSgodkantdatum}{-}
+\newcommand{\LIPSkursnamn}{TSEK06}
+\newcommand{\LIPSprojektnamn}{16-bit Kogge-Stone Adder}
+\newcommand{\LIPSprojektgrupp}{Group 5}
+\newcommand{\LIPSartaltermin}{VT, 2016}
+\newcommand{\LIPSkund}{ISY}
+\newcommand{\LIPSkundkontakt}{Martin Nielsen-Lönn}
+\newcommand{\LIPSkursansvarig}{Atila Alvandpour}
+\newcommand{\LIPShandledare}{Martin Nielsen-Lönn}
+
+% Dokument-specifika paket
+\usepackage{tabularx}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{float}
+\usetikzlibrary{shapes, arrows}
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage[justification=centering]{caption}
+\usepackage{adjustbox}
+\usepackage{siunitx}
+\pagenumbering{roman}
+
+
+\DeclareGraphicsRule{.0.pdf}{pdf}{*}{}
+
+\begin{document}
+\pagenumbering{gobble}
+\LIPSTitelsida
+\pagenumbering{gobble}
+\begin{LIPSprojektidentitet}
+  \LIPSgruppmedlem{Johan Isaksson}{Project Leader}{070-2688785}{johis024@student.liu.se}
+  \LIPSgruppmedlem{Johannes Klasson}{Document Manager}{073-8209003}{johkl226@student.liu.se}
+  \LIPSgruppmedlem{Jonas Tarassu}{VLSI Designer}{070-5738583}{jonta760@student.liu.se}
+  \LIPSgruppmedlem{Alexander Yngve}{VLSI Designer}{076-2749762}{aleyn573@student.liu.se}	
+\end{LIPSprojektidentitet}
+
+\newpage
+\pagenumbering{gobble}
+\tableofcontents	%Innehållsförteckning
+%\listoffigures
+%\listoftables
+
+\newpage
+\pagenumbering{gobble}
+\begin{LIPSdokumenthistorik}
+\LIPSversionsinfo{P1A}{2016-05-26}{First draft}{Johan Isaksson}
+\end{LIPSdokumenthistorik}
+
+\newpage
+\pagenumbering{arabic}	%Påbörja sidnumrering
+
+% Inledning, översikt osv
+
+\input{tex/intro.tex}
+
+\input{tex/top.tex}
+
+\input{tex/simulation_results.tex}
+
+\input{tex/pad_and_test.tex}
+
+\input{tex/risks_and_delays.tex}
+
+\input{tex/project_evaluation.tex}
+
+\newpage
+
+\begin{appendix}
+
+\input{tex/time_plan.tex}
+
+\input{tex/sim_pics.tex}
+
+\end{appendix}
+\end{document}
