@@ -31,7 +31,7 @@ In Fig. \ref{fig:block_first} the block diagram of the system after the first de
 \subsection{SPI-in}
 
 \subsection{16-bit Kogge-Stone Adder}
-The Kogge-Stone adder consists of several simple blocks connected in a complex way. The \textit{yellow} block has been split into two blocks \textit{yellow\_inv\_in} and \textit{yellow\_inv\_out}, which can be seen in Fig. \ref{fig:yellow_opt}. The \textit{yellow\_inv\_in} block takes inverted input signals and gives non-inverted output. The \textit{yellow\_inv\_out} block takes non-inverted inputs and gives inverted output. This arrangement saves a lot of gates. The \textit{yellow\_carry} block has been split in the same way. 
+The KS adder consists of several simple blocks connected in a complex way. The \textit{yellow} block has been split into two blocks \textit{yellow\_inv\_in} and \textit{yellow\_inv\_out}, which can be seen in Fig. \ref{fig:yellow_opt}. The \textit{yellow\_inv\_in} block takes inverted input signals and gives non-inverted output. The \textit{yellow\_inv\_out} block takes non-inverted inputs and gives inverted output. This arrangement saves a lot of gates. The \textit{yellow\_carry} block has been split in the same way. 
 
 Because of the inverted signals from \textit{yellow\_inv\_out} some \textit{sum} blocks have been replaced with XNOR gates instead of XOR gates which are the case in a standard KS adder design. A couple of inverters have also been added within the adder to make sure the new blocks gets the correct input.
 
@@ -57,3 +57,5 @@ To save space, new switch nets were created for the generate calculation of the 
   \includegraphics[scale=0.15]{../figures/G_inv_out}
   \caption{Generate part of \textit{yellow\_inv\_out}.} \label{fig:G_inv_out}
 \end{figure}
+
+\subsection{SPI-out}
