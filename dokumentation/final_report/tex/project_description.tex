@@ -1,7 +1,7 @@
 \section{Project Description} \label{sec:project_description}
 The objective of this project was to implement a 16-bit Kogge-Stone Adder in \SI{0.35}{\micro\m} technology which from now on will be called KS adder. The KS adder belongs to the family of parallel-prefix adders which reduces the critical path compared to regular ripple-carry adders. The cost for this is paid in area and complex routing which prolongs development time.
 
-Fast adders are very important in all types of integrated circuits since almost all algorithms one can come up with consists of at least one one addition. 
+Fast adders are very important in all types of integrated circuits since almost all algorithms one can come up with consists of at least one addition. 
 
 The official goal was to reach a speed of \SI{200}{\mega\Hz} but the group decided on an unofficial goal to reach a speed of \SI{400}{\mega\Hz}.
 
@@ -9,21 +9,51 @@ The official goal was to reach a speed of \SI{200}{\mega\Hz} but the group decid
   \centering
   \captionsetup{justification=centering}
   \includegraphics[scale=0.5]{../figures/TOP.pdf}
-  \caption{Block diagram of the system first iteration.} \label{fig:block_first}
+  \caption{Block diagram of the system after first iteration.} \label{fig:block_first}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.1]{../figures/top_level_second.png}
-\caption{Block diagram of the system second iteration.} \label{fig:block_second}
+\caption{Block diagram of the system after second iteration.} \label{fig:block_second}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.1]{../figures/top_level_final.png}
-\caption{Block diagram of the system final iteration.}  \label{fig:block_final}
+\caption{Final block diagram of the system.}  \label{fig:block_final}
 \end{figure}
 
-In Figure \ref{fig:block_first} the block diagram of the system after the first design phase is depicted. One can note that the signal goes from one block to the next directly. In figure \ref{fig:block_second} some registers have been introduced to make sure BISTout stays the same between clock pulses when new data is evaluated and to give a more stable signal to the comparator and SPI-out unit. In the final iteration additional register have been inserted between SPI in and the adder to cut the path from the registers in the SPI unit to the adder and to make sure that all bits in the same word arrives at the same time to the adder. The block diagram from the last iteration can be seen in Figure \ref{fig:block_final}.
+In Fig. \ref{fig:block_first} the block diagram of the system after the first design phase is depicted. One can note that the signal goes from one block to the next directly. In Fig. \ref{fig:block_second} some registers have been introduced to make sure BISTout stays the same between clock pulses when new data is evaluated and to give a more stable signal to the comparator and SPI-out unit. In the final iteration additional register have been inserted between SPI in and the adder to cut the path from the registers in the SPI unit to the adder and to make sure that all bits in the same word arrives at the same time to the adder. The block diagram from the last iteration can be seen in Fig. \ref{fig:block_final}.
+
+\subsection{SPI-in}
+
+\subsection{16-bit Kogge-Stone Adder}
+The Kogge-Stone adder consists of several simple blocks connected in a complex way. The \textit{yellow} block has been split into two blocks \textit{yellow\_inv\_in} and \textit{yellow\_inv\_out}, which can be seen in Fig. \ref{fig:yellow_opt}. The \textit{yellow\_inv\_in} block takes inverted input signals and gives non-inverted output. The \textit{yellow\_inv\_out} block takes non-inverted inputs and gives inverted output. This arrangement saves a lot of gates. The \textit{yellow\_carry} block has been split in the same way. 
+
+Because of the inverted signals from \textit{yellow\_inv\_out} some \textit{sum} blocks have been replaced with XNOR gates instead of XOR gates which are the case in a standard KS adder design. A couple of inverters have also been added within the adder to make sure the new blocks gets the correct input.
+
+\begin{figure}[H]
+  \centering
+  \captionsetup{justification=centering}
+  \includegraphics[scale=0.12]{../figures/yellow_opt}
+  \caption{The new yellow blocks.} \label{fig:yellow_opt}
+\end{figure}
+
+To save space, new switch nets were created for the generate calculation of the \textit{yellow} blocks. The new nets can be seen in Fig. \ref{fig:G_inv_in} and \ref{fig:G_inv_out}. By doing this the transistor count is cut in half. 
+
+\begin{figure}[H]
+  \centering
+  \captionsetup{justification=centering}
+  \includegraphics[scale=0.15]{../figures/G_inv_in}
+  \caption{Generate part of \textit{yellow\_inv\_in}.} \label{fig:G_inv_in}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \captionsetup{justification=centering}
+  \includegraphics[scale=0.15]{../figures/G_inv_out}
+  \caption{Generate part of \textit{yellow\_inv\_out}.} \label{fig:G_inv_out}
+\end{figure}
