@@ -1,21 +1,4 @@
 \section{Simulation Results} \label{sec:simulation_results}
-This section describes the high level simulation results. All files referenced to in this section can be found in the attached zip-file.
-\subsection{SPI In}
-The first thing to test in the system is where it all begins, at the input. The basics of it can be seen in test\_spi\_receive. As can be seen, as soon as the SPI\_enable signal goes low and the SPI\_clk starts we start to receive one bit on every positive edge. The data is then shifted trough all of the 16 registers. As the 16th bit is shifted in, the first load signal is triggered. Every 16 bits after that another load signal is triggered, and this can be seen in test\_spi\_load. One can also see that once the last load signal is triggered, SPI\_enable goes high again.\\
-The last thing in the SPI\_in module to test is how the data travels out of the PRBS registers. This can be seen in test\_spi\_prbs. One important thing to note is that as soon as SPI\_enable goes high, the registers are triggered on the system clock. As one can see in the figure, the first bit is ready for a long time, and as soon as the last bit is ready, we start to add at full speed. And after the four bits are done the system continues to add the pseudo random numbers. 
+This section describes the high level simulation results. 
 
-\subsection{Kogge-Stone Adder}
-The simulation of the adder can be seen in Appendix \ref{app:simulations} Fig. \ref{fig:kogge_delay}. The input sequence for A, B and cin is \texttt{0xFFFF}, \texttt{0x0000} and \texttt{1} respectively. This sequence should generate the worst case propagation delay which in our case, as can be seen in the simulation, is \SI{1.36}{\nano\s}. The reason to why the propagation delay is measured between the LSB bit of the A signal and cout is because cin is generated through an ideal voltage source which is set to high in this case. The A signal on the other hand is generated through a clocked test generation block written in VerilogA. The BISTout signal, which indicates if the addition was carried out successfully or not goes high two clock pulses after the data was fed into the adder, just as intended.
-
-\subsection{Comparator}
-The simulation of the comparator was left out since the comparator block is part of the test bench for the adder. All outputs from the adder goes into the comparator together with a Corr-sum signal. If these two signals matches, meaning the addition was carried out correctly in the adder, BISTout goes high.
-
-\subsection{SPI Out}
-The critical parts of this module are the events after a transition on the spi enable signal.\\
-
-In Fig. \ref{fig:spi_out1} a simulation of the behaviour when the SPI enable goes high. The simulation shows that the buffering of the signals successfully achieved satisfying rise and fall times For the enable signals.\\
-
-When spi enable goes low, the four enable signals are the same as the spi clock which can be seen in the image \ref{fig:spi_out2}. \\
-
-\subsection{Top Level}
-One can get a overall picture of the behaviour of the system by looking at at the simulations in the order spi\_receive, spi\_prbs and last the spi\_out. This is possible because all this simulations are part of a bigger one. The Kogge-Stone adder was left out here for simplicity.
+SPI-out, BIST-out clk->s8
