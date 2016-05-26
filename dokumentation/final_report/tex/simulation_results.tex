@@ -7,6 +7,15 @@ This section describes the high level simulation results. As simulations with to
 
 
 In Fig. \ref{spi_out_sim} the four enable signals, the spi clock and the spi enale signal from the spi output module is shown. As can be seen, the four enable signals each goes high once during the high period of the spi enable.\\
-When the spi enable signal goes low again the most significant bit of the sum is available on the first falling edge of the spi clock. If you look closely, you can see that the sum outputted is the same as the correction sum, as can be seen in \ref{sec:risks}.
+When the spi enable signal goes low again the most significant bit of the sum is available on the first falling edge of the spi clock. If you look closely, you can see that the first sum outputted are the same as the first correction sum that can be seen in table \ref{tab:test_data}. (all sums match except for the third correction sum which contains an error)\\
+
+In Fig. \ref{bist_sim} a simulation of the BISTout signal can be seen. As mentioned earlier the correction sum contains an error which makes the BISTout signal go low for one cycle. \\
+It can also be seen that the BISTout first go high after two system clock cycles as effect from pipelining.\\
+
+In Fig. \ref{adder_sim} simulation of the propagation delay through the adder can be seen. Due to routing problems it was shown that bit 8 of the sum were the slowest and as can be seen, it takes approximately 2.7ns from system clock edge until the result is ready. 
+
+
+
+
 
 \todo{SPI-out, BIST-out, clk to s8}
