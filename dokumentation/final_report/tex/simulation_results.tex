@@ -1,4 +1,12 @@
 \section{Simulation Results} \label{sec:simulation_results}
-This section describes the high level simulation results. 
+This section describes the high level simulation results. As simulations with too many signals were consuming too much memory (and crashed) the group decided to only look at signals that showed if the chip worked or not.\\
+
+
+
+
+
+
+In Fig. \ref{spi_out_sim} the four enable signals, the spi clock and the spi enale signal from the spi output module is shown. As can be seen, the four enable signals each goes high once during the high period of the spi enable.\\
+When the spi enable signal goes low again the most significant bit of the sum is available on the first falling edge of the spi clock. If you look closely, you can see that the sum outputted is the same as the correction sum, as can be seen in \ref{sec:risks}.
 
 SPI-out, BIST-out clk->s8
