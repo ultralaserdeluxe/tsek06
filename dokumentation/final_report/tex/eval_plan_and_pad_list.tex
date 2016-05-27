@@ -1,5 +1,7 @@
-\section{Evaluation Plan and PAD List}
+\section{Chip evaluation}
 This chapter will describe how to verify the functionality of the chip using a FPGA board and an oscilloscope.
+
+\subsection{Pad list}
 Tab. \ref{tab:pins} shows the pin assignments for the chip. The pad frame with corresponding names and pin type is shown in Fig. \ref{fig:padframe}. Fig. \ref{fig:setup} shows how to connect the chip to the FPGA board and oscilloscope.
 
 \begin{table}[H]
@@ -23,6 +25,10 @@ Tab. \ref{tab:pins} shows the pin assignments for the chip. The pad frame with c
   \end{tabularx}
   \label{tab:pins}
 \end{table}
+
+
+\input{tex/spi_interface.tex}
+\newpage
 
 Tab. \ref{tab:test_data} shows the data that should be fed into the chip to test it's functionality.
 
