@@ -1,5 +1,6 @@
 \section{Evaluation Plan and PAD List}
-Table \ref{tab:pins} shows the pin assignments for the chip. The pad frame with corresponding names and pin type is shown in Fig. \ref{fig:padframe}.
+This chapter will describe how to verify the functionality of the chip using a FPGA board and an oscilloscope.
+Table \ref{tab:pins} shows the pin assignments for the chip. The pad frame with corresponding names and pin type is shown in Fig. \ref{fig:padframe}. Fig \ref{fig:setup} shows how to connect the chip to the FPGA board and oscilloscope.
 
 \begin{table}[H]
   \caption{Pin assignments}
@@ -23,16 +24,6 @@ Table \ref{tab:pins} shows the pin assignments for the chip. The pad frame with 
   \label{tab:pins}
 \end{table}
 
-\begin{figure}[H]
-\centering
-\captionsetup{justification=centering}
-\includegraphics[scale=0.1]{../figures/padframe.png}
-\caption{Pad frame showing how to connect things.} \label{fig:padframe}
-\end{figure}
-
-               
-
-\subsection{Evaluation}
 Tab. \ref{tab:test_data} shows the data that should be fed into the chip to test it's functionality.
 
 \begin{table}[H]
@@ -47,4 +38,23 @@ Tab. \ref{tab:test_data} shows the data that should be fed into the chip to test
     1111111111111111 & 1111111111111111 & 0000000000000110 & 1111111111111110\\ \hline
   \end{tabularx}
   \label{tab:test_data}
-\end{table}
+\end{table}   
+
+\subsection{Evaluation}
+To test the chip everything should be connected as shown in Fig \ref{fig:setup}. The FPGA shown should be programmed to send out the data shown in Tab. \ref{tab:test_data} with the MSB first to be able to compare the results obtained during simulations before tape-out. The SPI clock should be at least four times slower than the system clock for the SPI-unit to function properly. While the data is being transferred into the chip clk\_enable should be held low which is for 256 SPI clock pulses. After this clk\_enable must go high within 15 clock pulses to avoid overwriting previously transferred data.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.1]{../figures/padframe.png}
+\caption{Pad frame showing how to connect things.} \label{fig:padframe}
+\end{figure}
+
+The chip will be tested in two different modes namely, PRBS- and TEST mode. The PRBS-mode is used to measure the power consumption of the adder while being fed with pseudo random data at full speed. TEST-mode on the other hand is used to measure the propagation delay through the adder. The propagation delay can be determined by measuring the time between transition on Cin to transition on Cout. For this to happen the input data must be chosen such that the adder overflows which causes Cout to go high. This happens for data number for in Tab. \ref{tab:test_data}. While in TEST mode it's possible to test how fast the system can be clocked by looking at BISTout while ramping up the frequency. As long as BISTout is high the system functions as intended but as soon as BISTout goes low something failed to keep up with the clock.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.07]{../figures/evaluation_setup.png}
+\caption{Pad frame showing how to connect things.} \label{fig:setup}
+\end{figure} 
