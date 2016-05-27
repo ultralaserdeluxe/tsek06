@@ -1,35 +1,38 @@
 \section{Simulation Results} \label{sec:simulation_results}
-This section describes the high level simulation results. As simulations with too many signals were consuming too much memory (and crashed) the group decided to only look at signals that showed if the chip worked or not.\\
+%This section describes the high level simulation results. As simulations with too many signals were consuming too much memory (and crashed) the group decided to only look at signals that showed if the chip worked or not.\\
 
-\subsection{Adder}
-In Fig. \ref{adder_sim} simulation of the propagation delay through the adder can be seen. Due to routing problems it was shown that bit 8 of the sum were the slowest and as can be seen, it takes approximately 2.7ns from system clock edge until the result is ready. \\
 
-\subsection{SPI output}
+%\subsection{Adder}
+%In Fig. \ref{adder_sim} simulation of the propagation delay through the adder %can be seen. Due to routing problems it was shown that bit 8 of the sum were %the slowest and as can be seen, it takes approximately 2.7ns from system clock %edge until the result is ready. \\
+
+%\subsection{SPI output}
 %In Fig. \ref{spi_out_sim} the four enable signals, the spi clock and the spi enale signal from the spi output module is shown. As can be seen, the four enable signals each goes high once during the high period of the spi enable.\\
-When the spi enable signal goes low the most significant bit of the sum is available on the first falling edge of the spi clock. If you look closely, you can see that the first sum outputted are the same as the first correction sum that can be seen in table \ref{tab:test_data}. (all sums match except for the third correction sum which contains an error)\\
+%When the spi enable signal goes low the most significant bit of the sum is available on the first falling edge of the spi clock. If you look closely, you can see that the first sum outputted are the same as the first correction sum that can be seen in table \ref{tab:test_data}. (all sums match except for the third correction sum which contains an error)\\
 
-\subsection{BIST}
-In Fig. \ref{bist_sim} a simulation of the BISTout signal can be seen. As mentioned earlier the correction sum contains an error which makes the BISTout signal go low for one cycle. \\
-It can also be seen that the BISTout first go high after two system clock cycles as effect from pipelining.\\
+%\subsection{BIST}
+%In Fig. \ref{bist_sim} a simulation of the BISTout signal can be seen. As mentioned earlier the correction sum contains an error which makes the BISTout signal go low for one cycle. \\
+%It can also be seen that the BISTout first go high after two system clock cycles as effect from pipelining.\\
 
 
 
 \subsection{Corners}
 After running the simulation for different corners we retrieved the following data regarding system performance. 
 
-
-\begin{tabular}{| c | c | c |}
-	\hline
-	Simulation type & Frequency achieved & Power consumption\\
-	\hline
- 	Nominal & $\ge 250$ MHz & -- \\
-	\hline
- 	Worst power & $\ge 250$ MHz & -- \\
-	\hline 
-	Worst speed & $< 200$ MHz & -- \\
-	\hline 
-	
-\end{tabular}
+\begin{table}[H]
+	\caption{Corner results.}
+	\centering
+	\begin{tabular}{| c | c | c |}
+		\hline
+		Simulation type & Frequency achieved & Power consumption\\
+		\hline
+		Nominal & $\ge 250$ MHz & -- \\
+		\hline
+		Worst power & $\ge 250$ MHz & -- \\
+		\hline 
+		Worst speed & $< 200$ MHz & -- \\
+		\hline 
+	\end{tabular}
+\end{table}
 
 
 

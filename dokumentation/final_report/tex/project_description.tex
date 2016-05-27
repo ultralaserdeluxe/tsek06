@@ -9,14 +9,14 @@ The official goal was to reach a speed of \SI{200}{\mega\Hz} but the group decid
   \centering
   \captionsetup{justification=centering}
   \includegraphics[scale=0.5]{../figures/TOP.pdf}
-  \caption{Block diagram of the system after first iteration.} \label{fig:block_first}
+  \caption{Block diagram of the system after the first iteration.} \label{fig:block_first}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.1]{../figures/top_level_second.png}
-\caption{Block diagram of the system after second iteration.} \label{fig:block_second}
+\caption{Block diagram of the system after the second iteration.} \label{fig:block_second}
 \end{figure}
 
 \begin{figure}[H]
@@ -42,7 +42,7 @@ The first part in the SPI-in module is SPI-receive, where we receive all the bit
 \end{figure}
 
 \subsubsection{Test-registers}
-The test-registers (see Fig. \ref{fig:spi_prbs}) consists of four flip flops (one for each addition). While SPI\_enable is low, we load the registers with data from SPI-receive, and when it is high one of two things can happen, depending on what we want to test. If we want to test the energy consumption, then the new data to the registers are pseudo-random data, that we get from a XOR of the third and fourth bit in the register, meaning we get 15 different values. And if we want to test the speed, then the same data is looped through the registers over and over, meaning we can slowly increase the clock rate and see when the system produces the wrong data.
+The test-registers (see Fig. \ref{fig:spi_prbs}) consists of four flip flops (one for each addition). While SPI\_enable is low, we load the registers with data from SPI-receive, and when it is high one of two things can happen, depending on what we want to test. If we want to test the energy consumption, then the new data to the registers are pseudo-random data, that we get from a XOR of the third and fourth bit in the register, meaning we get 15 different sequence combinations. And if we want to test the speed, then the same data is looped through the registers over and over, meaning we can slowly increase the clock rate and see when the system produces the wrong data.
 
 \begin{figure}[H]
 	\centering

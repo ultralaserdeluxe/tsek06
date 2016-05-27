@@ -1,6 +1,6 @@
 \section{Evaluation Plan and PAD List}
 This chapter will describe how to verify the functionality of the chip using a FPGA board and an oscilloscope.
-Table \ref{tab:pins} shows the pin assignments for the chip. The pad frame with corresponding names and pin type is shown in Fig. \ref{fig:padframe}. Fig \ref{fig:setup} shows how to connect the chip to the FPGA board and oscilloscope.
+Tab. \ref{tab:pins} shows the pin assignments for the chip. The pad frame with corresponding names and pin type is shown in Fig. \ref{fig:padframe}. Fig. \ref{fig:setup} shows how to connect the chip to the FPGA board and oscilloscope.
 
 \begin{table}[H]
   \caption{Pin assignments}
@@ -12,7 +12,7 @@ Table \ref{tab:pins} shows the pin assignments for the chip. The pad frame with 
     Vdd2 & INOUT & Analog & Will provide the adder with power and it might vary from \SI{3.3}{\volt} downto threshold-voltage. \\ \hline
     GND &  INOUT & Analog & Ground. \\ \hline
     Clk & IN & Analog & This is the clock for the adder, some registers and control logic. Should have a frequency of at least \SI{200}{\mega\hertz} at \SI{3.3}{\volt}. Will be lower as we decrease the voltage of Vdd2. \\ \hline
-    SPI\_clk & IN & Digital & This clock is used by the input and output unit and should be at least five times slower than the system clock. Should also be low if SPI\_en is inactive. \\ \hline
+    SPI\_clk & IN & Digital & This clock is used by the input and output unit and should be at least four times slower than the system clock. Should also be low if SPI\_en is inactive. \\ \hline
     SPI\_en & IN & Digital & Active low. Should go high on the first negative flank of SPI\_clk after the last value is read. \\ \hline
     SPI\_in & IN & Digital & Updates it's value as soon as SPI\_en goes low, and should have it's value ready on the first positive flank of SPI\_clk, since this is when we read the value. The value of SPI\_in should then be updated on every negative flank of SPI\_clk. \\ \hline
     SPI\_out & OUT & Digital & The data is available for read on the first falling edge of SPI\_clk after SPI\_en has gone active. \\ \hline
@@ -32,25 +32,25 @@ Tab. \ref{tab:test_data} shows the data that should be fed into the chip to test
   \begin{tabularx}{\linewidth}{|X|X|X|X|}
     \hline
     \textbf{A} & \textbf{B} & \textbf{Config bits} & \textbf{Check sum} \\ \hline
-    1101000110010010 & 1101100100011000 & 0000000000000010 & 1010101010101010\\ \hline
-    0100010000110001 & 0001000100100011 & 0000000000000001 & 0101010101010101\\ \hline
-    1000000000000000 & 1000000000000000 & 0000000000000111 & 0000000100000001\\ \hline
-    1111111111111111 & 1111111111111111 & 0000000000000110 & 1111111111111110\\ \hline
+    1111111111111111 & 1111111111111111 & 0000000000000011 & 1111111111111111\\ \hline
+    0100010000110001 & 0001000100100011 & 0000000000000000 & 0101010101010100\\ \hline
+    1111111111111111 & 0000000000000000 & 0000000000000111 & 0000000000000000\\ \hline
+    0000000000000000 & 0000000000000000 & 0000000000000100 & 0000000000000000\\ \hline
   \end{tabularx}
   \label{tab:test_data}
 \end{table}   
 
 \subsection{Evaluation}
-To test the chip everything should be connected as shown in Fig \ref{fig:setup}. The FPGA shown should be programmed to send out the data shown in Tab. \ref{tab:test_data} with the MSB first to be able to compare the results obtained during simulations before tape-out. The SPI clock should be at least four times slower than the system clock for the SPI-unit to function properly. While the data is being transferred into the chip clk\_enable should be held low which is for 256 SPI clock pulses. After this clk\_enable must go high within 15 clock pulses to avoid overwriting previously transferred data.
+To test the chip everything should be connected as shown in Fig. \ref{fig:setup}. The FPGA shown should be programmed to send out the data shown in Tab. \ref{tab:test_data} with the MSB first to be able to compare the results obtained during simulations before tape-out. The SPI clock should be at least four times slower than the system clock for the SPI-unit to function properly. While the data is being transferred into the chip clk\_enable should be held low, which is for 256 SPI clock pulses. After this clk\_enable must go high within 15 clock pulses to avoid overwriting previously transferred data.
 
 \begin{figure}[H]
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.1]{../figures/padframe.png}
-\caption{Pad frame showing how to connect things.} \label{fig:padframe}
+\caption{Overview of the pad frame.} \label{fig:padframe}
 \end{figure}
 
-The chip will be tested in two different modes namely, PRBS- and TEST mode. The PRBS-mode is used to measure the power consumption of the adder while being fed with pseudo random data at full speed. TEST-mode on the other hand is used to measure the propagation delay through the adder. The propagation delay can be determined by measuring the time between transition on Cin to transition on Cout. For this to happen the input data must be chosen such that the adder overflows which causes Cout to go high. This happens for data number for in Tab. \ref{tab:test_data}. While in TEST mode it's possible to test how fast the system can be clocked by looking at BISTout while ramping up the frequency. As long as BISTout is high the system functions as intended but as soon as BISTout goes low something failed to keep up with the clock.
+The chip will be tested in two different modes namely, PRBS- and TEST-mode. The PRBS-mode is used to measure the power consumption of the adder while being fed with pseudo random data at full speed. TEST-mode on the other hand is used to measure the propagation delay through the adder. The propagation delay can be determined by measuring the time between transition on Cin to transition on Cout. For this to happen the input data must be chosen such that the adder overflows which causes Cout to go high. This happens for data number for in Tab. \ref{tab:test_data}. While in TEST-mode it's possible to test how fast the system can be clocked by looking at BISTout while ramping up the frequency. As long as BISTout is high the system functions as intended but as soon as BISTout goes low something failed to keep up with the clock.
 
 \begin{figure}[H]
 \centering
