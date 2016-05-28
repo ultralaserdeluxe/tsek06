@@ -13,10 +13,7 @@
 %In Fig. \ref{bist_sim} a simulation of the BISTout signal can be seen. As mentioned earlier the correction sum contains an error which makes the BISTout signal go low for one cycle. \\
 %It can also be seen that the BISTout first go high after two system clock cycles as effect from pipelining.\\
 
-
-
-\subsection{Corners}
-After running the simulation for different corners we retrieved the following data regarding system performance. 
+After running the simulation for different corners we retrieved the following data regarding system performance. The test data used can be seen in Tab. \ref{tab:test_data}.
 
 \begin{table}[H]
 	\caption{Corner results.}
@@ -43,11 +40,6 @@ After running the simulation for different corners we retrieved the following da
 	\label{corner_result}
 \end{table}
 
-The propagation delay was measured between Cin and Cout and between Cin and Sum15. The possible adder frequencies in Tab. \ref{corner_result} are based to longest of these two.
+The propagation delay was measured between Cin and Cout and between Cin and Sum15. The possible adder frequencies in Tab. \ref{corner_result} are based on longest of these two. One thing to note is that the complete system did not function correctly during worst speed. The adder itself works fine and the correct data is outputted through SPI-out, but the built-in self test is failing.
 
-
-
-
-
-
-\todo{This section will be updated and completed 2016-05-28}
+Simulation results, for the nominal corner with a frequency of 200 MHz, of the propagation delay, the SPI-out data and of BISTout can be seen in Appendix \ref{app:simulations}.
