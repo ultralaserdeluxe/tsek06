@@ -21,18 +21,29 @@ After running the simulation for different corners we retrieved the following da
 \begin{table}[H]
 	\caption{Corner results.}
 	\centering
-	\begin{tabular}{| c | c | c |}
+	\begin{tabular}{| l | c | c | c | c |}
 		\hline
-		Simulation type & Frequency achieved & Power consumption\\
+		Corner & Nominal & Worst speed & Worst power & Unit\\
 		\hline
-		Nominal & $\ge 250$ MHz & -- \\
-		\hline
-		Worst power & $\ge 250$ MHz & -- \\
+		Simulated temperature & $27$ & $100$ & $0$ & Celcius\\
 		\hline 
-		Worst speed & $< 200$ MHz & -- \\
+		Tested frequency & $200$ & $166$ & $333$ & MHz  \\
+		\hline
+		Power consumption chip & $18.89$ & $16.54$ & $31.3$ & mW \\
 		\hline 
+		Power consumption adder & $0.93$ & $0.807$ & $1.436$ & mW \\
+		\hline 
+		Propagation delay sum15 & $2.209$ & $4.234$ & $1.264$ & ns \\
+		\hline 
+		Propagation delay cout & $2.195$ & $3.744$ & $1.332$ & ns \\
+		\hline
+		Possible adder frequency & $455$ & $236$ & $750$ & MHz \\
+		\hline
 	\end{tabular}
+	\label{corner_result}
 \end{table}
+
+The propagation delay was measured between Cin and Cout and between Cin and Sum15. The possible adder frequencies in Tab. \ref{corner_result} are based to longest of these two.
 
 
 
