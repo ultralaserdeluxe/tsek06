@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      jonta760
+HostName                       southfork-14.edu.isy.liu.se
+ProcessIdentifier              9722
+ProcessCreationTime_UTC        1463391182
+ProcessCreationTime_Readable   Mon May 16 11:33:02 2016 CEST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /site/edu/eks/TSEK06/2016/projects/vlsi5/common_libs/project_main_shared/testgen_PROJECT/veriloga/netlist.oa.cdslck
+TimeEditLocked                 Mon May 16 11:55:56 2016 CEST

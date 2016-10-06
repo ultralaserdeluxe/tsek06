@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      johkl226
+HostName                       egypten-06.edu.isy.liu.se
+ProcessIdentifier              9726
+ProcessCreationTime_UTC        1456226382
+ProcessCreationTime_Readable   Tue Feb 23 12:19:42 2016 CET
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /site/edu/eks/TSEK06/2016/projects/vlsi5/common_libs/project_main_shared/testgen_PROJECT/veriloga/netlist.oa.cdslck
+TimeEditLocked                 Tue Feb 23 13:50:36 2016 CET
